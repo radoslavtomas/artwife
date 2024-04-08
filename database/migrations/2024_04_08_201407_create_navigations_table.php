@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('navigations', function (Blueprint $table) {
             $table->id();
+            $table->string('navigation_key');
             $table->json('navigation');
             $table->string('language')->default('sk');
             $table->timestamps();

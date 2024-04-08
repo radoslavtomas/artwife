@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('editions', function (Blueprint $table) {
             $table->id();
             $table->string('edition_key');
-            $table->boolean('status_id');
+            $table->foreignId('status_id')->constrained();
             $table->boolean('active')->default(false);
             $table->integer('year');
             $table->string('image');
