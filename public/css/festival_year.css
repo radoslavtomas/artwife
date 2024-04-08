@@ -1,0 +1,137 @@
+#festival {
+    margin-top: 30px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    min-width: 1000px;
+}
+
+#year-programming {
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    min-width: 1000px;
+}
+
+#hero-image {
+    width: 100%;
+}
+
+#festival-title {
+    text-transform: uppercase;
+    color: white;
+    text-shadow: -1.3px 1.3px 0 #000, 1.3px 1.3px 0 #000, 1.3px -1.3px 0 #000, -1.3px -1.3px 0 #000;
+}
+
+#festival-title a {
+    color: white;
+    text-underline-offset: 7px;
+    text-decoration-color: black;
+    text-decoration: underline;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-delay: 0s;
+}
+
+#festival-title a:hover {
+    text-decoration: none;
+    text-underline-offset: 0px;
+    color: white;
+    background-color: black;
+}
+
+#festival-body a {
+    color: black;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 3px;
+}
+
+#festival-body a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: black;
+}
+
+#year-programming .card {
+    border: 2px solid black;
+    border-radius: 0px;
+}
+
+#year-programming a {
+    text-decoration: none;
+    color: black;
+}
+
+#year-programming img {
+    border-radius: 0px;
+    border: 2px solid white;
+}
+
+#year-programming header {
+    color: white;
+    text-shadow: -1.3px 1.3px 0 #000, 1.3px 1.3px 0 #000, 1.3px -1.3px 0 #000, -1.3px -1.3px 0 #000;
+}
+
+.teaser-footer {
+    border-top: 2px solid black;
+}
+
+#year-programming a:hover .card {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+#year-programming a:hover img {
+    border: 2px solid white;
+}
+
+#year-programming a:hover .teaser-footer {
+    border-top: 2px solid white;
+}
+
+#year-programming a:hover header {
+    color: black;
+    text-shadow: -1.3px 1.3px 0 white, 1.3px 1.3px 0 white, 1.3px -1.3px 0 white, -1.3px -1.3px 0 white;
+}
+
+@media screen and (max-width: 1199px) {
+    #festival, #year-programming {
+        min-width: 800px !important;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #festival, #year-programming {
+        min-width: 0px !important;
+        width: 95%;
+    }
+
+}
+
+@media screen and (max-width: 765px) {
+    #festival-title {
+        color: black;
+        text-shadow: none;
+    }
+
+    #festival-title a {
+        color: black;
+        text-decoration-thickness: 3px;
+    }
+
+    #year-programming header {
+        color: black;
+        text-shadow: none;
+    }
+
+    #year-programming a:hover header {
+        color: white;
+        text-shadow: none;
+    }
+}
+

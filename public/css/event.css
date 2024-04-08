@@ -1,0 +1,123 @@
+#event {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 0px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1000px;
+}
+
+.card-body {
+    padding-top: 0px;
+    padding-right: 0px;
+}
+
+.card-title {
+    text-transform: uppercase;
+    color: white;
+    text-shadow: -1.3px 1.3px 0 #000, 1.3px 1.3px 0 #000, 1.3px -1.3px 0 #000, -1.3px -1.3px 0 #000;
+}
+
+.card-text {
+    line-height: 1.1;
+    max-height: 300px;
+    overflow: scroll;
+}
+
+.card .teaser-text-container .card-footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: white;
+    border-top: none;
+    padding-bottom: 0px;
+}
+
+#event a {
+    text-decoration: underline;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-delay: 0s;
+    color: black;
+}
+
+.schedule {
+    border-top: 2px solid black;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 4px;
+}
+
+.schedule .day {
+    padding-left: 0px;
+}
+
+.schedule .time {
+    padding-right: 0px;
+}
+
+#event a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+
+#hero-image {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#event-date {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-bottom: 2px solid black;
+}
+
+#event-title {
+    font-family: Elastik-A, sans-serif;
+    font-size-adjust: 0.4;
+    font-size: 55px;
+    line-height: 0.9;
+    text-transform: uppercase;
+    hyphens: none !important;
+    margin-bottom: 15px;
+}
+
+#event-body {
+    font-family: Elastik-A, sans-serif;
+    font-size-adjust: 0.4;
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+#fb-event-link{
+    position: absolute !important;
+    left: 50px;
+    top: 50px;
+}
+
+@media screen and (max-width: 1199px) {
+    #event {
+        min-width: 0px !important;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #event {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 765px) {
+
+    .card-title {
+        color: black;
+        text-shadow: none;
+    }
+}

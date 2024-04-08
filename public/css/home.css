@@ -1,0 +1,236 @@
+/* Rules specific to homepage elements */
+
+.marquee {
+    --gap: 1rem;
+    background-color: black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+}
+
+.marquee__content {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    flex-shrink: 0;
+    display: flex;
+    /* justify-content: space-around; */
+    min-width: 100%;
+    gap: var(--gap);
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+#opening-hours {
+    background-color: white;
+    border: 2px solid black;
+    text-transform: uppercase;
+    text-align: center;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+#hours-container {
+    flex-grow: 1;
+}
+
+#news-letter-teaser {
+    background-color: white;
+    border: 2px solid black;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+}
+
+#nl-link-container {
+    transform: rotate(-7deg) !important;
+    flex-grow: 1;
+}
+
+#nl-link-container a {
+    border-radius: 50% / 50%;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    padding-left: 95px;
+    padding-right: 95px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+/* FEATURED ARTICLES AND EVENTS */
+#featured {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 60%;
+    min-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hp-teaser {
+    text-decoration: none !important;
+    color: black;
+}
+
+.hp-teaser-content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    background-color:white;
+    border: 2px solid black;
+}
+
+.teaser-img-container {
+    grid-column: 1;
+    grid-row: 1/4;
+    padding-right: .5rem;
+}
+
+.teaser-body-container {
+    grid-column: 2;
+    grid-row: 2;
+    /* here the rules to contain the element to its cell's height */
+    min-height:100%;
+    height:0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* end */
+    padding-left: .5rem;
+}
+
+.hp-teaser footer {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.hp-teaser .card {
+    border-radius: 0px;
+    width: 100%;
+    border: 2px solid black !important;
+}
+
+#featured header {
+    color: white;
+    text-shadow: -1.3px 1.3px 0 #000, 1.3px 1.3px 0 #000, 1.3px -1.3px 0 #000, -1.3px -1.3px 0 #000;
+    hyphens: auto;
+}
+
+.hp-teaser {
+    transition: all 1s ease-out;
+}
+
+.hp-teaser p {
+    text-transform: uppercase !important;
+    line-height: 1;
+    /* font-size: 26px; */
+}
+
+.hp-teaser img {
+    width: 100%;
+    border: 2px solid white;
+}
+
+/* .hp-teaser article, .hp-teaser h2, .hp-teaser p { */
+/*     transition: hover 0.3s; */
+/* } */
+
+
+.hp-teaser:hover article {
+    border: 2px solid white !important;
+    background-color: black;
+    color: white;
+}
+
+.hp-teaser:hover h2 {
+    color: black;
+    text-shadow: -1.3px 1.3px 0 white, 1.3px 1.3px 0 white, 1.3px -1.3px 0 white, -1.3px -1.3px 0 white;
+}
+
+.hp-teaser:hover p {
+    color: white;
+}
+
+.schedule {
+    border-top: 2px solid black;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 4px;
+}
+
+.hp-teaser:hover .schedule {
+    border-top: 2px solid white;
+}
+
+.schedule .day {
+    padding-left: 0px;
+}
+
+.schedule .time {
+    padding-right: 0px;
+}
+
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 990px) {
+    #featured {
+        width: 95%;
+        min-width: initial;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    img.wide-display {
+        display: none;
+    }
+
+    img.small-display {
+        display: block !important;
+    }
+
+    .hp-teaser-content {
+        display: block;
+    }
+
+    .teaser-img-container {
+        padding-right: 0px !important;
+    }
+
+    .teaser-body-container {
+        min-height:100%;
+        height:100%;
+        overflow-y: initial;
+        padding-left: 0px !important;
+    }
+
+    #featured header {
+        color: black;
+        text-shadow: none;
+    }
+
+    .hp-teaser:hover h2 {
+        color: white;
+        text-shadow: none;
+    }
+
+    #opening-hours {
+        min-height: auto;
+    }
+}

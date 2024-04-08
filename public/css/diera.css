@@ -1,0 +1,306 @@
+/* RULES COMMON TO ALL PAGES */
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Elastik-A;
+    font-size: 22px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* MAIN MENU */
+#main-menu {
+    background-color: white;
+    font-size: 30px;
+    border-bottom : 2px solid black;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* MM: BRAND */
+.navbar-brand {
+    margin-left: 15px;
+}
+
+.navbar-brand img {
+    width: 160px;
+}
+
+/* MM: RESPONSIVE TOGGLER */
+.navbar-toggler {
+    margin-right: 15px;
+    border-radius: 0px;
+}
+
+.fa-bars {
+    font-size: 30px;
+    color: black;
+}
+
+/* MM: LINKS */
+a.nav-link {
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: black;
+    border-bottom: none;
+}
+
+a.nav-link:hover {
+    background-color: black !important;
+    color: white;
+}
+
+.selected a {
+    background-color: black;
+    color: white;
+}
+
+/* Progressively shrink left and right padding of nav items on smaller displays */
+@media screen and (max-width: 1800px) {
+    a.nav-link {
+        padding-left: 34px !important;
+        padding-right: 34px !important;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    a.nav-link {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        /* font-size: 26px !important; */
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    a.nav-link {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        /* font-size: 24px; */
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    a.nav-link {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        font-size: 28px;
+    }
+}
+
+/* MM: SOCIAL LINKS AND LANGUAGE SWITCHER */
+.socials-and-lang {
+    flex-direction: row;
+}
+.socials-and-lang a {
+    text-decoration: none !important;
+    color: black;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.socials-and-lang a:hover {
+    background-color: white !important;
+}
+
+/* Font Awesome Social Icons */
+.fab {
+    padding-top: 10px;;
+    padding-bottom: 10px;;
+    padding-left: 5px;
+    padding-rigth: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+#language-switcher a {
+    color: black !important;
+}
+
+
+/* FOOTER */
+footer {
+    width: 100%;
+}
+
+#site-footer {
+    border-top: 2px solid black;
+    background-color: white;
+    padding-top: 20px;
+    font-size: 16px;
+    width: 100%;
+}
+
+#page-footer .card {
+    padding: 0px;
+    border: none;
+}
+
+#page-footer .card-body {
+    padding: 0px;
+}
+
+#footer-left {
+    width: 50%;
+}
+
+#footer-right {
+    width: 50%;
+}
+
+#footer-contacts {
+    width: 50%;
+    height: 290px;
+}
+
+#footer-address {
+    width: 50%;
+    height: 290px;
+}
+
+#footer-banking {
+    width: 50%;
+    height: 290px;
+}
+
+#footer-partner {
+    width: 50%;
+    height: 290px;
+}
+
+#fpu-logo {
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#orange-logo {
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#site-footer a {
+    text-decoration: underline !important;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-delay: 0s;
+    color: black;
+}
+
+#site-footer a:hover {
+    color: white;
+    text-decoration: none !important;
+    background-color: black;
+    text-decoration: none;
+    /* font-weight: bold; */
+    /* border-radius: 1px; */
+    /* padding: 1px; */
+}
+
+#copyright div {
+    text-align: center;
+}
+
+#copyright p {
+    margin-bottom: 10px;
+}
+
+#cookie-notice {
+    border-top: 1px solid black;
+    background-color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#cookie-notice p {
+    line-height: 1 !important;
+    font-size: 16px;
+    margin-bottom: 0px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+#cookie-notice button {
+    border: 1px solid black;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+
+#cookie-notice button:hover {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Responsive rules  */
+@media screen and (max-width: 1199px) {
+    #footer-left, #footer-right {
+        max-width: 650px;
+    }
+
+    #footer-left {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #socials li {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #footer-left, #footer-right {
+        width: 100%;
+    }
+
+    #footer-right {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #footer-left, #footer-right {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #footer-contacts, #footer-address, #footer-banking, #footer-partner {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 30px;
+    }
+
+    #page-footer .card {
+        width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    #fpu-logo {
+        width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
