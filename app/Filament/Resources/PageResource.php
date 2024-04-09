@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -24,12 +25,28 @@ class PageResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('page_key')->required(),
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\RichEditor::make('body')->required(),
-                Forms\Components\Select::make('language')->options([
-                    'sk' => 'SK',
-                    'en' => 'EN',
-                ])->required(),
+                Forms\Components\Fieldset::make('Page name settings')
+                    ->schema([
+                        Forms\Components\Repeater::make('name')
+                            ->schema([
+                                Forms\Components\Select::make('language')->options([
+                                    'sk' => 'SK',
+                                    'en' => 'EN',
+                                ])->required(),
+                                Forms\Components\TextInput::make('name')->required(),
+                            ])->columns(1),
+                    ])->columns(1),
+                Forms\Components\Fieldset::make('Page body settings')
+                    ->schema([
+                        Forms\Components\Repeater::make('body')
+                            ->schema([
+                                Forms\Components\Select::make('language')->options([
+                                    'sk' => 'SK',
+                                    'en' => 'EN',
+                                ])->required(),
+                                Forms\Components\RichEditor::make('body')->required(),
+                            ])
+                    ])->columns(1)
             ])->columns(1);
     }
 
@@ -37,9 +54,8 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('page_key'),
-                Tables\Columns\TextColumn::make('language')->color('primary'),
+                Tables\Columns\TextColumn::make('name.0.name')->label('Name'),
             ])
             ->filters([
                 //

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Page extends Model
+class Navigation extends Model
 {
     use HasFactory;
 
@@ -15,9 +15,9 @@ class Page extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'page_key',
-        'name',
-        'body',
+        'navigation_key',
+        'navigation',
+        'language',
     ];
 
     /**
@@ -28,8 +28,7 @@ class Page extends Model
     protected function casts(): array
     {
         return [
-            'name' => 'array',
-            'body' => 'array',
+            'navigation' => 'array',
         ];
     }
 }

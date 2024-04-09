@@ -17,16 +17,15 @@ return new class extends Migration
             $table->foreignId('status_id')->constrained();
             $table->boolean('featured')->default(false);
             $table->string('image');
-            $table->string('title');
+            $table->json('title');
             $table->string('slug');
             $table->date('date_start');
             $table->time('time_start');
             $table->date('date_end')->nullable();
             $table->time('time_end')->nullable();
             $table->string('place')->nullable();
-            $table->text('teaser')->nullable();
-            $table->longText('body');
-            $table->string('language')->default('sk');
+            $table->json('teaser')->nullable();
+            $table->json('body');
             $table->timestamps();
         });
     }

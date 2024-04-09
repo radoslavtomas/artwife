@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('editions', function (Blueprint $table) {
             $table->id();
-            $table->string('edition_key');
+            $table->json('edition_key');
             $table->foreignId('status_id')->constrained();
             $table->boolean('active')->default(false);
             $table->integer('year');
             $table->string('image');
-            $table->string('title');
-            $table->string('body');
-            $table->string('language')->default('sk');
+            $table->json('title');
+            $table->json('body');
             $table->timestamps();
         });
     }

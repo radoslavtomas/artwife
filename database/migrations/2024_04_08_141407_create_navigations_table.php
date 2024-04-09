@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('navigation_key');
             $table->json('navigation');
-            $table->string('language')->default('sk');
+            $table->string('language');
             $table->timestamps();
         });
     }
