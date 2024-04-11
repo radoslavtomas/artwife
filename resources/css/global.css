@@ -1,17 +1,5 @@
-/*@tailwind base;*/
-/*@tailwind components;*/
-/*@tailwind utilities;*/
-
-@font-face {
-    font-family: Elastik-A;
-    font-style: normal;
-    font-weight: normal;
-    src: url(../fonts/Elastik-A.ttf) format('truetype');
-}
-
-/* --- GLOBAL.CSS START --- */
-
 /* RULES COMMON TO ALL PAGES */
+
 body {
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -316,4 +304,3 @@ footer {
         margin-right:auto;
     }
 }
-/* --- GLOBAL.CSS END --- */

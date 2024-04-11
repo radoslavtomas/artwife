@@ -17,12 +17,12 @@
 
         <!-- LOAD ELASTIC FONT -->
         <style>
-            @font-face {
-                font-family: Elastik-A;
-                font-style: normal;
-                font-weight: normal;
-                src: url(/fonts/Elastik-A.ttf) format('truetype');
-            }
+            /*@font-face {*/
+            /*    font-family: Elastik-A;*/
+            /*    font-style: normal;*/
+            /*    font-weight: normal;*/
+            /*    src: url(/fonts/Elastik-A.ttf) format('truetype');*/
+            /*}*/
 
             body {
                 background-image: url('/img/2024_marec_web_bckgrnd.png');
@@ -38,12 +38,13 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- BOOTSTRAP CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+{{--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">--}}
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
 
         <!-- DIERA GLOBAL CSS  -->
-        <link href="/css/diera.css" rel="stylesheet">
-        <link href="/css/home.css" rel="stylesheet">
+{{--        <link href="/css/global.css" rel="stylesheet">--}}
+{{--        <link href="/css/diera.css" rel="stylesheet">--}}
+{{--        <link href="/css/home.css" rel="stylesheet">--}}
 
         <!-- Colcade JS for teasers masonry grid -->
         <script src="https://unpkg.com/colcade@0/colcade.js"></script>
@@ -166,8 +167,8 @@
     <script src="https://kit.fontawesome.com/0d8827d474.js" crossorigin="anonymous"></script>
 
     <!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+{{--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>--}}
+{{--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>--}}
 
     </body>
 </html>

@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FestivalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProgramController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\App;
 
 //Route::get('/', function () {
 //    return Inertia::render('Welcome', [
@@ -16,15 +20,14 @@ use Inertia\Inertia;
 //});
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/festival', [HomeController::class, 'festival']);
-Route::get('/artwife', [HomeController::class, 'artwife']);
-Route::get('/event', [HomeController::class, 'event']);
-Route::get('/about', [HomeController::class, 'about']);
+Route::get('/program', [ProgramController::class, 'program']);
+Route::get('/festival', [FestivalController::class, 'festival']);
+Route::get('/about', [AboutController::class, 'about']);
 
 Route::get('language/{language}', function ($language) {
     Session()->put('locale', $language);
     return redirect()->back();
-});
+})->name('language');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

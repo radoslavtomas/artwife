@@ -63,6 +63,6 @@ class AdminPanelProvider extends PanelProvider
      */
     public function boot()
     {
-        app()->setLocale('en');
+        // app()->setLocale('en');
     }
 }

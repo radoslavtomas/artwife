@@ -2,8 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Navigation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Inertia\Middleware;
+use Illuminate\Support\Facades\App;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -34,6 +37,22 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'navigation' => function () {
+                return $this->getNavigationItems();
+            },
+            'locale' => function () {
+                return app()->getLocale();
+            },
         ];
+    }
+
+    private function getNavigationItems()
+    {
+        $navigation = Navigation::where([
+            ['navigation_key', 'main'],
+            ['language', app()->getLocale()]
+        ])->first();
+
+        return $navigation['navigation'];
     }
 }
