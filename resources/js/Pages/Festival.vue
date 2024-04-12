@@ -10,7 +10,10 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 
         <div id="festival">
             <!-- TEASER IMAGE -->
-            <img id="hero-image" class="mb-4" src="/img/cover.png__1200x600_q85_crop_subsampling-2_upscale.jpg">
+            <div
+                class="teaser-img-container-large"
+                style="background-image: url('/img/cover.png__1200x600_q85_crop_subsampling-2_upscale.jpg')"
+            ></div>
 
             <!-- FESTIVAL TITLE -->
             <header id="festival-title">
@@ -95,4 +98,5 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 
 <style scoped>
 @import "../../css/festival.css";
+@import "../../css/utilities.css";
 </style>

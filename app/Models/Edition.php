@@ -15,12 +15,12 @@ class Edition extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'edition_key',
         'status_id',
         'active',
         'year',
         'image',
         'title',
         'body',
-        'language'
     ];
 }

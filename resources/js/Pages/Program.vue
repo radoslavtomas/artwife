@@ -11,16 +11,12 @@ import MainLayout from '@/Layouts/MainLayout.vue'
         <div id="festival">
 
             <!-- TEASER IMAGE -->
-
-
-
-            <img id="hero-image" class="mb-4" src="/media/filer_public_thumbnails/filer_public/7d/15/7d150d89-95e1-4ae6-a302-acfa36041d66/cover.png__1200x600_q85_crop_subsampling-2_upscale.jpg">
-
-
+            <div
+                class="teaser-img-container-large"
+                style="background-image: url('/img/cover.png__1200x600_q85_crop_subsampling-2_upscale.jpg')"
+            ></div>
 
             <!-- FESTIVAL YEAR TITLE -->
-
-
             <header id="festival-title" class="display-2 lh-1 mb-1">
                 <a href="/festivaly/artwife/">ArtWife</a> / ARTWIFE 2023: JAZYK
             </header>
@@ -884,4 +880,5 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 
 <style scoped>
 @import "../../css/festival_year.css";
+@import "../../css/utilities.css";
 </style>

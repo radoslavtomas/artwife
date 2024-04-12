@@ -1,0 +1,30 @@
+.teaser-img-container-large {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 490px;
+}
+
+@media screen and (max-width: 990px) {
+    .teaser-img-container-large {
+        height: 410px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .teaser-img-container-large {
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .teaser-img-container-large {
+        height: 310px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .teaser-img-container-large {
+        height: 180px;
+    }
+}
