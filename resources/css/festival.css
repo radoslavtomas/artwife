@@ -9,6 +9,10 @@
     min-width: 1000px;
 }
 
+.festival-addition {
+    margin-bottom: 30px;
+}
+
 #festival-years {
     margin-bottom: 30px;
     margin-left: auto;
@@ -176,13 +180,13 @@
 }
 
 @media screen and (max-width: 1199px) {
-    #festival, #festival-years {
-        min-width: 800px !important;
-    }
+    /*#festival, #festival-years, .festival-addition {*/
+    /*    min-width: 800px !important;*/
+    /*}*/
 }
 
 @media screen and (max-width: 990px) {
-    #festival, #festival-years {
+    #festival, #festival-years, .festival-addition {
         min-width: 0px !important;
         width: 95%;
     }

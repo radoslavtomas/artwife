@@ -25,6 +25,58 @@ import MainLayout from '@/Layouts/MainLayout.vue'
             </div>
         </a>
 
+        <!-- Teasers for featured events and articles -->
+        <div id="featured">
+
+
+
+            <div class="row gx-2 gy-2">
+                <!-- teasers -->
+
+
+                <div class="col-12">
+
+
+
+
+                    <a class="hp-teaser" href="/program/spiritualita-v-sucasnom-umeni/">
+                        <article class="hp-teaser-content p-2">
+                            <div
+                                class="teaser-img-container"
+                                style="background-image: url('/img/spiritualita_event.png__600x400_q85_crop_subsampling-2_upscale.jpg')"
+                            >
+
+                            </div>
+
+                            <div class="teaser-body-container fs-3">
+                                <header class="pb-3">
+                                    <h2 class="display-3 lh-1">SPIRITUALITA V SÚČASNOM UMENÍ</h2>
+                                </header>
+                                <p>Ako súčasné umenie uvažuje o duchovných otázkach a môže byť umenie novodobým duchovnom? </p>
+                            </div>
+
+                            <!-- TEASER FOOTER (FOR EVENTS ONLY) -->
+
+                            <footer>
+                                <div class="row schedule">
+                                    <div class="col fs-3 day" style="text-align:left;">
+                                        16.4.
+                                    </div>
+                                    <div class="col fs-3 time" style="text-align:right;">
+                                        18:00
+                                    </div>
+                                </div>
+                            </footer>
+
+
+
+                        </article>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
         <div id="festival">
             <!-- TEASER IMAGE -->
             <img id="hero-image" class="mb-4" src="/img/cover.png__1200x600_q85_crop_subsampling-2_upscale.jpg">
@@ -43,55 +95,15 @@ import MainLayout from '@/Layouts/MainLayout.vue'
             </div>
         </div>
 
-        <!-- FESTIVAL YEARS -->
-        <div id="festival-years" class="mt-2">
-            <div id="festival-years-grid" class="row gx-2 gy-2">
-
-                <div class="col-12 col-md-6 col-lg-6">
-                    <a href="/festivaly/artwife/jazyk/">
-                        <div class="card teaser-card">
-
-                            <!-- FESTIVAL YEAR TEASER IMAGE -->
-                            <img class="card-img-top" style="" src="/img/cover.png__600x300_q85_crop_subsampling-2_upscale.jpg">
-
-                            <div class="card-img-overlay">
-                                <div class="center">
-                                    <div id="year" class="display-3">
-                                        2023
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-6">
-                    <a href="/festivaly/artwife/sesterstvo/">
-
-                        <div class="card teaser-card">
-                            <!-- FESTIVAL YEAR TEASER IMAGE -->
-                            <img class="card-img-top" style="" src="/img/cover_web.jpg__600x300_q85_crop_subsampling-2_upscale.jpg">
-
-                            <div class="card-img-overlay">
-                                <div class="center">
-                                    <div id="year" class="display-3">
-                                        2022
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
     </MainLayout>
 </template>
 
 <style scoped>
 @import "../../css/home.css";
 @import "../../css/festival.css";
+
+#festival {
+    margin-bottom: 40px;
+}
 
 </style>
