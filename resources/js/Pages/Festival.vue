@@ -100,6 +100,5 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 </template>
 
 <style scoped>
-@import "../../css/festival.css";
-@import "../../css/utilities.css";
+
 </style>

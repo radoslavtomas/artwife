@@ -1,9 +1,7 @@
 <script setup>
-import { onMounted } from 'vue'
 import Navigation from '@/Components/Navigation.vue'
 import TheFooter from '@/Components/TheFooter.vue'
 
-onMounted(() => console.log('Hi from main'))
 </script>
 
 <template>
@@ -20,6 +18,8 @@ onMounted(() => console.log('Hi from main'))
     </footer>
 </template>
 
-<style scoped>
-
+<style>
+@import "../../css/festival.css";
+@import "../../css/about.css";
+@import "../../css/utilities.css";
 </style>
