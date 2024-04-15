@@ -12,7 +12,13 @@ onMounted(() => {
     let nav = navigation.value
 
     for (const item of nav) {
-        item.selected = item.route === path
+        // festival is the only route that can contain year and event
+        // e.g. /festival/2024/example-event
+        if(item.route === '/festival') {
+            item.selected = path.includes(item.route)
+        } else {
+            item.selected = item.route === path
+        }
     }
 })
 </script>

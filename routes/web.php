@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\App;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/program', [ProgramController::class, 'program']);
-Route::get('/festival', [FestivalController::class, 'festival']);
+Route::get('/festival/{year?}/{event_slug?}', [FestivalController::class, 'festival']);
 Route::get('/about', [AboutController::class, 'about']);
 
 Route::get('language/{language}', function ($language) {
