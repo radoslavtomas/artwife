@@ -35,12 +35,13 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 
                 <div class="col-12 col-md-6 col-lg-6">
                     <a href="/festivaly/artwife/jazyk/">
-                        <div class="card teaser-card">
+                        <div class="card teaser-card teaser-img-container-edition"
+                             style="background-image: url('/img/cover.png__600x300_q85_crop_subsampling-2_upscale.jpg')">
 
                             <!-- FESTIVAL YEAR TEASER IMAGE -->
-                            <img class="card-img-top" style="" src="/img/cover.png__600x300_q85_crop_subsampling-2_upscale.jpg">
+<!--                            <img class="card-img-top" style="" src="/img/cover.png__600x300_q85_crop_subsampling-2_upscale.jpg">-->
 
-                            <div class="card-img-overlay">
+                            <div class="card-img-overlay edition-overlay">
                                 <div class="center">
                                     <div id="year" class="display-3">
                                         2024
@@ -54,12 +55,13 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 
                 <div class="col-12 col-md-6 col-lg-6">
                     <a href="/festivaly/artwife/jazyk/">
-                        <div class="card teaser-card">
+                        <div class="card teaser-card teaser-img-container-edition"
+                             style="background-image: url('/img/cover.png__600x300_q85_crop_subsampling-2_upscale.jpg')">
 
                             <!-- FESTIVAL YEAR TEASER IMAGE -->
-                            <img class="card-img-top" style="" src="/img/cover.png__600x300_q85_crop_subsampling-2_upscale.jpg">
+<!--                            <img class="card-img-top" style="" src="/img/cover.png__1200x600_q85_crop_subsampling-2_upscale.jpg">-->
 
-                            <div class="card-img-overlay">
+                            <div class="card-img-overlay edition-overlay">
                                 <div class="center">
                                     <div id="year" class="display-3">
                                         2023
@@ -74,11 +76,12 @@ import MainLayout from '@/Layouts/MainLayout.vue'
                 <div class="col-12 col-md-6 col-lg-6">
                     <a href="/festivaly/artwife/sesterstvo/">
 
-                        <div class="card teaser-card">
+                        <div class="card teaser-card teaser-img-container-edition"
+                             style="background-image: url('/img/cover_web.jpg__600x300_q85_crop_subsampling-2_upscale.jpg')">
                             <!-- FESTIVAL YEAR TEASER IMAGE -->
-                            <img class="card-img-top" style="" src="/img/cover_web.jpg__600x300_q85_crop_subsampling-2_upscale.jpg">
+<!--                            <img class="card-img-top" style="" src="/img/cover_web.jpg__600x300_q85_crop_subsampling-2_upscale.jpg">-->
 
-                            <div class="card-img-overlay">
+                            <div class="card-img-overlay edition-overlay">
                                 <div class="center">
                                     <div id="year" class="display-3">
                                         2022

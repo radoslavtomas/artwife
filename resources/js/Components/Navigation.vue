@@ -7,7 +7,14 @@ const page = usePage()
 const locale = computed(() => page.props.locale)
 const navigation = computed(() => page.props.navigation)
 
-onMounted(() => console.log(locale.value))
+onMounted(() => {
+    const path = window.location.pathname
+    let nav = navigation.value
+
+    for (const item of nav) {
+        item.selected = item.route === path
+    }
+})
 </script>
 
 <template>
@@ -29,7 +36,12 @@ onMounted(() => console.log(locale.value))
                 <div class="mr-auto ml-auto mt-0 mb-0">
                     <ul class="navbar-nav">
 
-                        <li v-for="(item, index) in navigation" :key="index" class="child nav-item">
+                        <li
+                            v-for="(item, index) in navigation"
+                            :key="index"
+                            class="child nav-item"
+                            :class="{ 'selected': item.selected }"
+                        >
                             <Link class="nav-link fs-3 text-uppercase" :href="item.route">{{ item.display_text }}</Link>
                         </li>
 

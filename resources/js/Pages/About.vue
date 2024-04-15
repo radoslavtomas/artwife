@@ -1,6 +1,44 @@
 <script setup>
-import { Head } from '@inertiajs/vue3'
+import { Head, usePage } from '@inertiajs/vue3'
 import MainLayout from '@/Layouts/MainLayout.vue'
+import { computed, onMounted } from 'vue'
+import { getLocaleVersion } from '@/helpers/index.js'
+
+const locale = computed(() => usePage().props.locale)
+const pages = computed(() => usePage().props.pages)
+
+let data = {
+    about: {
+        name: null,
+        body: null
+    },
+    bookshop: {
+        name: null,
+        body: null
+    },
+    collective: {
+        name: null,
+        body: null,
+    },
+    space: {
+        name: null,
+        body:null
+    },
+    opening_hours: {
+        name: null,
+        body: null
+    }
+}
+
+let nameAbout = pages.value.data.filter((page) => page.page_key === 'about')[0];
+data.about.name = getLocaleVersion(nameAbout.name, locale.value)
+
+let bodyAbout = pages.value.data.filter((page) => page.page_key === 'about')[0];
+data.about.body = getLocaleVersion(bodyAbout.body, locale.value)
+
+onMounted(() => {
+    console.log(data.about)
+})
 
 </script>
 
@@ -130,13 +168,11 @@ import MainLayout from '@/Layouts/MainLayout.vue'
             </div>
 
             <h1>
-                O nás
+                {{ data.about.name.name }}
             </h1>
 
             <div id="about-content">
-                <p>Diera do Sveta je kultúrne centrum a špecializované kníhkupectvo v Liptovskom Mikuláši, ktoré v roku 2014 založili a otvorili Jana Mikuš Hanzelová, Ján Mikuš a Helena Hajková. Cieľom priestoru je vytvoriť zázemie pre nezávislú, alternatívnu a menšinovú kultúru a umožňovať verejné stretávanie, kolektívne neformálne vzdelávanie a spoločenskú kultiváciu.Organizácia a dramaturgické zameranie Diery do sveta je postavené na niekoľkých kľúčových ideových princípoch. Medzi ne patria feminizmus, rodová rovnosť, ekologickosť, ne-hierarchickosť a spoločensko-kultúrna angažovanosť. Dramaturgickou ambíciou kultúrneho centra je prinášať rozličné umelecko-kultúrne formáty, ktoré kriticky reagujú na súčasné urgentné problémy a krízy a zároveň majú emancipačný potenciál. Kolektív Diery do sveta verí v potrebu sociálnej a klimatickej spravodlivosti, medziľudskej solidarity, egalitárnosť a v silu kolektívnej organizácie.V umení a kultúre hľadáme vymedzenie voči dominantných diskurzom a praktikám, ktoré sú založené na vykorisťovaní a marginalizácii slabších.<br>
-                    <br>
-                    Naším cieľom je byť výluční v kvalite, avšak nevylučovať nikoho.</p>
+                <div v-html="data.about.body.body" />
 
                 <div id="about-sections" class="row">
 

@@ -63,9 +63,10 @@ import MainLayout from '@/Layouts/MainLayout.vue'
                         <div class="card p-2 h-100">
 
                             <!-- EVENT TEASER IMAGE -->
-
-
-                            <img class="card-img-top mb-2" src="/media/filer_public_thumbnails/filer_public/62/f6/62f60fcd-8122-46be-9640-71c801d27860/t-talk_aka_testosterone_talk.png__600x300_q85_crop_subsampling-2_upscale.jpg">
+                            <div
+                                class="teaser-img-container-program"
+                                style="background-image: url('/img/2023/t-talk_aka_testosterone_talk.jpg')"
+                            ></div>
 
 
                             <div class="card-body p-0 fs-3 lh-sm">
@@ -97,9 +98,10 @@ import MainLayout from '@/Layouts/MainLayout.vue'
                         <div class="card p-2 h-100">
 
                             <!-- EVENT TEASER IMAGE -->
-
-
-                            <img class="card-img-top mb-2" src="/media/filer_public_thumbnails/filer_public/13/b2/13b2f623-151e-4400-bca9-af476f6e4c64/cvicenie_s_mografiami.jpg__600x300_q85_crop_subsampling-2_upscale.jpg">
+                            <div
+                                class="teaser-img-container-program"
+                                style="background-image: url('/img/2023/cvicenie_s_mografiami.jpg')"
+                            ></div>
 
 
                             <div class="card-body p-0 fs-3 lh-sm">
@@ -131,10 +133,10 @@ import MainLayout from '@/Layouts/MainLayout.vue'
                         <div class="card p-2 h-100">
 
                             <!-- EVENT TEASER IMAGE -->
-
-
-                            <img class="card-img-top mb-2" src="/media/filer_public_thumbnails/filer_public/6c/bc/6cbc3d92-70aa-407e-8433-f5ff6c2ff030/kedrova4.jpg__600x300_q85_crop_subsampling-2_upscale.jpg">
-
+                            <div
+                                class="teaser-img-container-program"
+                                style="background-image: url('/img/2023/kedrova4.jpg')"
+                            ></div>
 
                             <div class="card-body p-0 fs-3 lh-sm">
 
@@ -167,7 +169,7 @@ import MainLayout from '@/Layouts/MainLayout.vue'
                             <!-- EVENT TEASER IMAGE -->
 
 
-                            <img class="card-img-top mb-2" src="/media/filer_public_thumbnails/filer_public/c0/db/c0db2f16-3c2d-41b1-bdd4-736238dfcf9b/can20230511_086.jpg__600x300_q85_crop_subsampling-2_upscale.jpg">
+                            <img class="card-img-top mb-2" src="/img/2023/can20230511_086.jpg">
 
 
                             <div class="card-body p-0 fs-3 lh-sm">

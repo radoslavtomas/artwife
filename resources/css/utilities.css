@@ -5,9 +5,53 @@
     height: 490px;
 }
 
+.teaser-img-container-program {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: 2px solid white;
+    height: 160px;
+}
+
+.teaser-img-container-edition {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: 2px solid white;
+    height: 250px;
+}
+
+.edition-overlay {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.edition-overlay:hover {
+    background-color: rgb(0,0,0);
+}
+
+@media screen and (max-width: 1200px) {
+    .teaser-img-container-program {
+        height: 122px;
+    }
+}
+
 @media screen and (max-width: 990px) {
     .teaser-img-container-large {
         height: 410px;
+    }
+
+    .teaser-img-container-program {
+        height: 219px;
+    }
+
+    .teaser-img-container-edition {
+        height: 225px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .teaser-img-container-edition {
+        height: 190px;
     }
 }
 
@@ -15,16 +59,40 @@
     .teaser-img-container-large {
         height: 360px;
     }
+
+    .teaser-img-container-program {
+        height: 338px;
+    }
+
+    .teaser-img-container-edition {
+        height: 322px;
+    }
 }
 
 @media screen and (max-width: 650px) {
     .teaser-img-container-large {
         height: 310px;
     }
+
+    .teaser-img-container-program {
+        height: 300px;
+    }
+
+    .teaser-img-container-edition {
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 540px) {
     .teaser-img-container-large {
+        height: 180px;
+    }
+
+    .teaser-img-container-program {
+        height: 180px;
+    }
+
+    .teaser-img-container-edition {
         height: 180px;
     }
 }
