@@ -25,8 +25,11 @@ class PageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('page_key')->required(),
-                Forms\Components\Fieldset::make('Page name settings')
+                Forms\Components\Fieldset::make('Settings')->schema([
+                    Forms\Components\TextInput::make('page_key')->required(),
+                ]),
+
+                Forms\Components\Fieldset::make('Main')
                     ->schema([
                         Forms\Components\Repeater::make('name')
                             ->schema([
@@ -35,9 +38,6 @@ class PageResource extends Resource
                                     ->required(),
                                 Forms\Components\TextInput::make('name')->required(),
                             ])->columns(1),
-                    ])->columns(1),
-                Forms\Components\Fieldset::make('Page body settings')
-                    ->schema([
                         Forms\Components\Repeater::make('body')
                             ->schema([
                                 Forms\Components\Select::make('language')
@@ -45,7 +45,7 @@ class PageResource extends Resource
                                     ->required(),
                                 Forms\Components\RichEditor::make('body')->required(),
                             ])
-                    ])->columns(1)
+                    ])->columns(1),
             ])->columns(1);
     }
 
