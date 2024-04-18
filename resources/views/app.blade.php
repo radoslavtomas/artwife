@@ -17,13 +17,6 @@
 
         <!-- LOAD ELASTIC FONT -->
         <style>
-            /*@font-face {*/
-            /*    font-family: Elastik-A;*/
-            /*    font-style: normal;*/
-            /*    font-weight: normal;*/
-            /*    src: url(/fonts/Elastik-A.ttf) format('truetype');*/
-            /*}*/
-
             body {
                 background-image: url('/img/2024_marec_web_bckgrnd.png');
             }

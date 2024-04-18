@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\App;
 //    ]);
 //});
 
+require __DIR__.'/auth.php';
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/program', [ProgramController::class, 'program']);
 Route::get('/festival/{year?}/{event_slug?}', [FestivalController::class, 'festival']);
@@ -39,4 +41,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+

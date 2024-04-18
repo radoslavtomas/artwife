@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('title');
-            $table->text('about');
+            $table->json('title');
+            $table->json('about');
+            $table->string('phone');
+            $table->string('email');
+            $table->boolean('essential')->default(false);
             $table->string('avatar')->nullable();
             $table->boolean('published');
-            $table->string('language')->default('sk');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('editions', function (Blueprint $table) {
             $table->id();
-            $table->json('edition_key');
+            $table->string('edition_key');
             $table->foreignId('status_id')->constrained();
             $table->boolean('active')->default(false);
             $table->integer('year');

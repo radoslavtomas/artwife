@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers;
+use App\Models\Language;
 use App\Models\Page;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -29,10 +30,9 @@ class PageResource extends Resource
                     ->schema([
                         Forms\Components\Repeater::make('name')
                             ->schema([
-                                Forms\Components\Select::make('language')->options([
-                                    'sk' => 'SK',
-                                    'en' => 'EN',
-                                ])->required(),
+                                Forms\Components\Select::make('language')
+                                    ->options(Language::all()->pluck('name', 'id'))
+                                    ->required(),
                                 Forms\Components\TextInput::make('name')->required(),
                             ])->columns(1),
                     ])->columns(1),
@@ -40,10 +40,9 @@ class PageResource extends Resource
                     ->schema([
                         Forms\Components\Repeater::make('body')
                             ->schema([
-                                Forms\Components\Select::make('language')->options([
-                                    'sk' => 'SK',
-                                    'en' => 'EN',
-                                ])->required(),
+                                Forms\Components\Select::make('language')
+                                    ->options(Language::all()->pluck('name', 'id'))
+                                    ->required(),
                                 Forms\Components\RichEditor::make('body')->required(),
                             ])
                     ])->columns(1)

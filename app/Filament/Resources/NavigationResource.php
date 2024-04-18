@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\NavigationResource\Pages;
 use App\Filament\Resources\NavigationResource\RelationManagers;
+use App\Models\Language;
 use App\Models\Navigation;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -33,10 +34,9 @@ class NavigationResource extends Resource
                                 Forms\Components\TextInput::make('position')->numeric()->required(),
                             ])->columns(1),
                     ])->columns(1),
-                Forms\Components\Select::make('language')->options([
-                    'sk' => 'SK',
-                    'en' => 'EN',
-                ])->required(),
+                Forms\Components\Select::make('language')
+                    ->options(Language::all()->pluck('name', 'id'))
+                    ->required(),
             ])->columns(1);
     }
 

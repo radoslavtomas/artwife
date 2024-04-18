@@ -5,6 +5,8 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\EditionResource\Pages;
 use App\Filament\Resources\EditionResource\RelationManagers;
 use App\Models\Edition;
+use App\Models\Language;
+use App\Models\Status;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,8 +25,38 @@ class EditionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make('image')
-                    ->image()
+                Forms\Components\Fieldset::make('Is currently running')->schema([
+                    Forms\Components\Checkbox::make('active'),
+                ]),
+                Forms\Components\Fieldset::make('Settings')->schema([
+                    Forms\Components\Select::make('status_id')
+                        ->label('Status')
+                        ->options(Status::all()->pluck('name', 'id'))
+                        ->required(),
+                    Forms\Components\TextInput::make('edition_key')
+                        ->required(),
+                    Forms\Components\TextInput::make('year')
+                        ->required()
+                        ->numeric()
+                        ->length(4),
+                ])->columns(1),
+                Forms\Components\Fieldset::make('Main')->schema([
+                    Forms\Components\FileUpload::make('image')
+                        ->image()
+                        ->directory('editions'),
+                    Forms\Components\Repeater::make('title')->schema([
+                        Forms\Components\Select::make('language')
+                            ->options(Language::all()->pluck('name', 'id'))
+                            ->required(),
+                        Forms\Components\TextInput::make('title')->required(),
+                    ]),
+                    Forms\Components\Repeater::make('body')->schema([
+                        Forms\Components\Select::make('language')
+                            ->options(Language::all()->pluck('name', 'id'))
+                            ->required(),
+                        Forms\Components\RichEditor::make('body')->required(),
+                    ]),
+                ])->columns(1)
             ])->columns(1);
     }
 
@@ -32,7 +64,10 @@ class EditionResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('edition_key'),
+                Tables\Columns\TextColumn::make('year'),
+                Tables\Columns\CheckboxColumn::make('active')
             ])
             ->filters([
                 //

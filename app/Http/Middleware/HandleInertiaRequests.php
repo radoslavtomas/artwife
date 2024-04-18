@@ -53,6 +53,6 @@ class HandleInertiaRequests extends Middleware
             ['language', app()->getLocale()]
         ])->first();
 
-        return $navigation['navigation'];
+        return $navigation ? $navigation['navigation'] : null;
     }
 }
