@@ -14,6 +14,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class EditionResource extends Resource
 {
@@ -43,16 +45,21 @@ class EditionResource extends Resource
                 Forms\Components\Fieldset::make('Main')->schema([
                     Forms\Components\FileUpload::make('image')
                         ->image()
-                        ->directory('editions'),
+                        ->directory('editions')
+                        ->getUploadedFileNameForStorageUsing(
+                            function (TemporaryUploadedFile $file): string {
+                                $filename = explode('.', $file->getClientOriginalName())[0];
+                                return Str::slug($filename).'.'.$file->getClientOriginalExtension();
+                        }),
                     Forms\Components\Repeater::make('title')->schema([
                         Forms\Components\Select::make('language')
-                            ->options(Language::all()->pluck('name', 'id'))
+                            ->options(Language::all()->pluck('name', 'name'))
                             ->required(),
                         Forms\Components\TextInput::make('title')->required(),
                     ]),
                     Forms\Components\Repeater::make('body')->schema([
                         Forms\Components\Select::make('language')
-                            ->options(Language::all()->pluck('name', 'id'))
+                            ->options(Language::all()->pluck('name', 'name'))
                             ->required(),
                         Forms\Components\RichEditor::make('body')->required(),
                     ]),

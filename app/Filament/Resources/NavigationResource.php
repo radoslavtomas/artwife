@@ -35,7 +35,7 @@ class NavigationResource extends Resource
                             ])->columns(1),
                     ])->columns(1),
                 Forms\Components\Select::make('language')
-                    ->options(Language::all()->pluck('name', 'id'))
+                    ->options(Language::all()->pluck('name', 'name'))
                     ->required(),
             ])->columns(1);
     }

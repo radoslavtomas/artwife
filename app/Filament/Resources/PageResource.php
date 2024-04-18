@@ -34,14 +34,14 @@ class PageResource extends Resource
                         Forms\Components\Repeater::make('name')
                             ->schema([
                                 Forms\Components\Select::make('language')
-                                    ->options(Language::all()->pluck('name', 'id'))
+                                    ->options(Language::all()->pluck('name', 'name'))
                                     ->required(),
                                 Forms\Components\TextInput::make('name')->required(),
                             ])->columns(1),
                         Forms\Components\Repeater::make('body')
                             ->schema([
                                 Forms\Components\Select::make('language')
-                                    ->options(Language::all()->pluck('name', 'id'))
+                                    ->options(Language::all()->pluck('name', 'name'))
                                     ->required(),
                                 Forms\Components\RichEditor::make('body')->required(),
                             ])
