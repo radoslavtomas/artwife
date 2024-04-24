@@ -36,4 +36,9 @@ class Edition extends Model
             'body' => 'array',
         ];
     }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }

@@ -19,6 +19,7 @@ class FestivalController extends Controller
 
         if($year != null) {
             $edition = Edition::where('year', $year)->firstOrFail();
+            dd($edition->events()->get());
             return Inertia::render('FestivalEdition', [
                 'edition' => EditionResource::make($edition),
             ]);

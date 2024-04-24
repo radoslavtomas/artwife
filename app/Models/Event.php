@@ -15,6 +15,7 @@ class Event extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'edition_id',
         'status_id',
         'featured',
         'image',
@@ -29,4 +30,27 @@ class Event extends Model
         'body',
         'language'
     ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'title' => 'array',
+            'teaser' => 'array',
+            'body' => 'array',
+            'date_start' => 'datetime',
+            'time_start' => 'datetime',
+            'date_end' => 'datetime',
+            'time_end' => 'datetime',
+        ];
+    }
+
+    public function edition()
+    {
+        return $this->belongsTo(Edition::class);
+    }
 }

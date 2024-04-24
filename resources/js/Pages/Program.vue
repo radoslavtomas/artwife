@@ -1,6 +1,33 @@
 <script setup>
-import { Head } from '@inertiajs/vue3'
+import { Head, usePage, Link } from '@inertiajs/vue3'
 import MainLayout from '@/Layouts/MainLayout.vue'
+import { computed, onMounted } from 'vue'
+import { getLocaleVersion } from '@/helpers/index.js'
+
+const locale = computed(() => usePage().props.locale).value
+const edition = computed(() => usePage().props.edition).value.data
+const events = computed(() => usePage().props.events).value.data
+
+
+let data = {
+    edition_key: null,
+    title: null,
+    body: null,
+    year: null,
+    hero_img: null,
+}
+
+
+data.edition_key = edition.edition_key
+data.title = getLocaleVersion(edition.title, locale).title
+data.body = getLocaleVersion(edition.body, locale).body
+data.year = edition.year
+data.hero_img = edition.image
+
+onMounted(() => {
+    console.log(edition)
+    console.log(events)
+})
 
 </script>
 
@@ -13,37 +40,18 @@ import MainLayout from '@/Layouts/MainLayout.vue'
             <!-- TEASER IMAGE -->
             <div
                 class="teaser-img-container-large"
-                style="background-image: url('/img/cover.png__1200x600_q85_crop_subsampling-2_upscale.jpg')"
+                :style="{ backgroundImage: 'url(' + `/storage/${data.hero_img}` + ')' }"
             ></div>
 
             <!-- FESTIVAL YEAR TITLE -->
             <header id="festival-title" class="display-2 lh-1 mb-1">
-                <a href="/festivaly/artwife/">ArtWife</a> / ARTWIFE 2023: JAZYK
+                <Link href="/festival">ArtWife</Link> / <span class="uppercase">ARTWIFE {{ data.year }}: {{ data.title }}</span>
             </header>
 
 
 
             <!-- FESTIVAL YEAR BODY -->
-            <div id="festival-body" class="fs-3 lh-sm">
-                <div style="display:none">
-                    <p>Permanentky v predaji!</p>
-                </div>
-                <p>Má moc oslobodiť aj zraniť, vylučovať aj spájať. Jazyk - priestor na prelomenie mlčania a vyjadrenie solidarity. Alebo manévrovacia plocha na šírenie strachu a dezinformácií? Akým jazykom hovorí feminizmus a je ho vôbec počuť?</p>
-
-                <p>Šiesty ročník festivalu Artwife preskúma viaceré perspektívy tohtoročnej témy Jazyk, pričom sa pokúsi vyzdvihnúť potenciál jazyka ako nástroja spoločnej túžby po zmene.</p>
-
-                <p>Artwife, štvordňová oslava feminizmu vo všetkých jeho farebných podobách. </p>
-
-                <p><a href="https://goout.net/sk/festival-artwife-2023/szcfdlv/">KÚPTE SI VSTUPENKY ONLINE</a></p>
-
-                <p>Permanentky opäť ponúkame v niekoľkých cenových kategóriách podľa toho, ako hlboko máte do vrecka. Budeme vďačné za akúkoľvek podporu.</p>
-
-                <p><a href="https://www.facebook.com/events/581056473930162">FB EVENT</a></p>
-
-                <p>Pre aktuálne info sledujte <a href="https://www.instagram.com/dieradosveta/">náš instagram!</a></p>
-
-                <p>-<br>
-                    Festival z verejných zdrojov podporil Fond na podporu umenia. </p>
+            <div id="festival-body" class="fs-3 lh-sm" v-html="data.body">
             </div>
         </div>
 
