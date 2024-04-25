@@ -11,6 +11,7 @@ import Dedication from '@/Components/Dedication.vue'
 
 const locale = computed(() => usePage().props.locale)
 const pages = computed(() => usePage().props.pages)
+const people = computed(() => usePage().props.people).value.data
 
 let about = {
     name: null,
@@ -24,7 +25,7 @@ let bodyAbout = pages.value.data.filter((page) => page.page_key === 'about')[0];
 about.body = getLocaleVersion(bodyAbout.body, locale.value).body
 
 onMounted(() => {
-    // console.log(about)
+    console.log(people)
 })
 
 </script>
@@ -35,7 +36,7 @@ onMounted(() => {
 
         <div id="about" class="">
             <!-- gallery of members of diera -->
-            <TeamCarousel/>
+            <TeamCarousel :people="people"/>
 
             <h1>
                 {{ about.name }}

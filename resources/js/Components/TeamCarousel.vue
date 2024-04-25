@@ -1,4 +1,22 @@
 <script setup>
+import { computed, onMounted } from 'vue'
+import { usePage } from '@inertiajs/vue3'
+import { getLocaleVersion } from '@/helpers/index.js'
+
+const locale = computed(() => usePage().props.locale)
+
+const props = defineProps({
+    people: Object
+})
+
+// const title = getLocaleVersion(nameAbout.name, locale.value).name
+
+onMounted(() => {
+    const el = document.getElementsByClassName('carousel-control-next')[0]
+    setTimeout(() => {
+        el.click()
+    }, 1500)
+})
 
 </script>
 
@@ -10,101 +28,105 @@
 
                 <!-- Photos -->
                 <div class="carousel-inner">
-                    <!-- Jana Mikus Hanzelova (riaditeľka, projektový manažment, dramaturgia) -->
-                    <div class="carousel-item active" data-bs-interval="1500" >
+                    <!-- Person -->
+                    <div
+                        v-for="(person, index) in people"
+                        :key="person.id"
+                        :class="index === 0 ? 'carousel-item active' : 'carousel-item'"
+                        data-bs-interval="1500" >
 
                         <div class="image-container">
-                            <img src="/img/1__jana_mikus_hanzelova_Dg9N3IW.jpg" style="cursor:auto">
+                            <img :src="`/storage/${person.avatar}`" style="cursor:auto">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h4>Jana Hanzelová</h4>
-                            <p><em>riaditeľka, projektový manažment, dramaturgia</em></p>
+                            <h4>{{ person.full_name }}</h4>
+                            <p><em>{{ person.title[0].title }}</em></p>
                         </div>
                     </div>
 
-                    <!-- Jan Hanzel Mikus (finančný manažment, administratíva) -->
-                    <div class="carousel-item" data-bs-interval="1500" >
+<!--                    &lt;!&ndash; Jan Hanzel Mikus (finančný manažment, administratíva) &ndash;&gt;-->
+<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
 
-                        <div class="image-container">
-                            <img src="/img/2__jan_mikus.jpg" style="cursor:auto">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Ján Mikuš</h4>
-                            <p><em>finančný manažment, administratíva</em></p>
-                        </div>
-                    </div>
+<!--                        <div class="image-container">-->
+<!--                            <img src="/img/2__jan_mikus.jpg" style="cursor:auto">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-caption d-none d-md-block">-->
+<!--                            <h4>Ján Mikuš</h4>-->
+<!--                            <p><em>finančný manažment, administratíva</em></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <!-- Natalia Kudnisova (produkcia) -->
-                    <div class="carousel-item" data-bs-interval="1500" >
+<!--                    &lt;!&ndash; Natalia Kudnisova (produkcia) &ndash;&gt;-->
+<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
 
-                        <div class="image-container">
-                            <img src="/img/3__natalia_kundisova_Auru6xw.jpg" style="cursor:auto">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Natália Kundisova</h4>
-                            <p><em>produkcia</em></p>
-                        </div>
-                    </div>
+<!--                        <div class="image-container">-->
+<!--                            <img src="/img/3__natalia_kundisova_Auru6xw.jpg" style="cursor:auto">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-caption d-none d-md-block">-->
+<!--                            <h4>Natália Kundisova</h4>-->
+<!--                            <p><em>produkcia</em></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <!-- Barbora Bohusova (grafika, sociálne siete) -->
-                    <div class="carousel-item" data-bs-interval="1500" >
+<!--                    &lt;!&ndash; Barbora Bohusova (grafika, sociálne siete) &ndash;&gt;-->
+<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
 
-                        <div class="image-container">
-                            <img src="/img/4__barbora_bohusova_SRqaNkd.jpg" style="cursor:auto">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Barbora Bohušová</h4>
-                            <p><em>grafika, sociálne siete</em></p>
-                        </div>
-                    </div>
+<!--                        <div class="image-container">-->
+<!--                            <img src="/img/4__barbora_bohusova_SRqaNkd.jpg" style="cursor:auto">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-caption d-none d-md-block">-->
+<!--                            <h4>Barbora Bohušová</h4>-->
+<!--                            <p><em>grafika, sociálne siete</em></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <!-- Matej Zofcin (hudobna dramaturgia) -->
-                    <div class="carousel-item" data-bs-interval="1500" >
+<!--                    &lt;!&ndash; Matej Zofcin (hudobna dramaturgia) &ndash;&gt;-->
+<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
 
-                        <div class="image-container">
-                            <img src="/img/5__matej_zofcin_7WiGXwk.jpg" style="cursor:auto">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Matej Žofčín</h4>
-                            <p><em>hudobná dramaturgia</em></p>
-                        </div>
-                    </div>
+<!--                        <div class="image-container">-->
+<!--                            <img src="/img/5__matej_zofcin_7WiGXwk.jpg" style="cursor:auto">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-caption d-none d-md-block">-->
+<!--                            <h4>Matej Žofčín</h4>-->
+<!--                            <p><em>hudobná dramaturgia</em></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <!-- Andrea Kapráliková (dramaturgia školy a komunity) -->
-                    <div class="carousel-item" data-bs-interval="1500" >
+<!--                    &lt;!&ndash; Andrea Kapráliková (dramaturgia školy a komunity) &ndash;&gt;-->
+<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
 
-                        <div class="image-container">
-                            <img src="/img/6__andrea_kapralikova_hiQwBn9.jpg" style="cursor:auto">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Andrea Kapráliková</h4>
-                            <p><em>dramaturgia školy a komunity</em></p>
-                        </div>
-                    </div>
+<!--                        <div class="image-container">-->
+<!--                            <img src="/img/6__andrea_kapralikova_hiQwBn9.jpg" style="cursor:auto">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-caption d-none d-md-block">-->
+<!--                            <h4>Andrea Kapráliková</h4>-->
+<!--                            <p><em>dramaturgia školy a komunity</em></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <!-- Stanislav Stofcik (technika - zvuk)  -->
-                    <div class="carousel-item" data-bs-interval="1500" >
+<!--                    &lt;!&ndash; Stanislav Stofcik (technika - zvuk)  &ndash;&gt;-->
+<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
 
-                        <div class="image-container">
-                            <img src="/img/7__stanislav_stofcik_yyy9ao5.jpg" style="cursor:auto">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Stanisla Štofčík</h4>
-                            <p><em>technika - zvuk</em></p>
-                        </div>
-                    </div>
+<!--                        <div class="image-container">-->
+<!--                            <img src="/img/7__stanislav_stofcik_yyy9ao5.jpg" style="cursor:auto">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-caption d-none d-md-block">-->
+<!--                            <h4>Stanisla Štofčík</h4>-->
+<!--                            <p><em>technika - zvuk</em></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <!-- Jozef Kosik (technika - svetlo) -->
-                    <div class="carousel-item" data-bs-interval="1500">
+<!--                    &lt;!&ndash; Jozef Kosik (technika - svetlo) &ndash;&gt;-->
+<!--                    <div class="carousel-item" data-bs-interval="1500">-->
 
-                        <div class="image-container">
-                            <img src="/img/8__jozef_kosik_18jyRhG.jpg" style="cursor:auto">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h4>Jozef Kosik</h4>
-                            <p><em>technika - svetlo</em></p>
-                        </div>
-                    </div>
+<!--                        <div class="image-container">-->
+<!--                            <img src="/img/8__jozef_kosik_18jyRhG.jpg" style="cursor:auto">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-caption d-none d-md-block">-->
+<!--                            <h4>Jozef Kosik</h4>-->
+<!--                            <p><em>technika - svetlo</em></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                 </div>
 

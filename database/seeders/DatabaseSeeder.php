@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Language;
 use App\Models\Role;
 use App\Models\Status;
 use App\Models\User;
@@ -39,7 +40,7 @@ class DatabaseSeeder extends Seeder
         }
 
         foreach ($languages as $language) {
-            Role::factory()->create([
+            Language::factory()->create([
                 'name' => $language
             ]);
         }
