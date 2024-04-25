@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\EditionResource;
+use App\Http\Resources\PageResource;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -9,26 +12,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Home');
-    }
+        $page = Page::where('page_key', 'festival')->firstOrFail();
 
-    public function festival()
-    {
-        return view('festival');
-    }
-
-    public function artwife()
-    {
-        return view('artwife');
-    }
-
-    public function event()
-    {
-        return view('event');
-    }
-
-    public function about()
-    {
-        return view('about');
+        return Inertia::render('Home', [
+            'page' => PageResource::make($page),
+        ]);
     }
 }

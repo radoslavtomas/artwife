@@ -1,6 +1,25 @@
 <script setup>
-import { Head } from '@inertiajs/vue3'
+import { Head, usePage } from '@inertiajs/vue3'
 import MainLayout from '@/Layouts/MainLayout.vue'
+import { computed, onMounted } from 'vue'
+import { getLocaleVersion } from '@/helpers/index.js'
+
+const locale = computed(() => usePage().props.locale).value
+const page = computed(() => usePage().props.page).value.data
+
+let data = {
+    name: null,
+    body: null,
+    hero_img: null,
+    editions: null,
+}
+
+data.name = getLocaleVersion(page.name, locale).name
+data.body = getLocaleVersion(page.body, locale).body
+
+onMounted(() => {
+    console.log(data)
+})
 
 </script>
 
@@ -81,21 +100,18 @@ import MainLayout from '@/Layouts/MainLayout.vue'
             <!-- TEASER IMAGE -->
             <div
                 class="teaser-img-container-large"
-                style="background-image: url('/img/cover.png__1200x600_q85_crop_subsampling-2_upscale.jpg')"
+                style="background-image: url('/img/spiritualita_event.png__600x400_q85_crop_subsampling-2_upscale.jpg')"
             ></div>
 
 
             <!-- FESTIVAL TITLE -->
             <header id="festival-title">
-                <h1 class="display-2 lh-1">ArtWife</h1>
+                <h1 class="display-2 lh-1">{{ data.name }}</h1>
             </header>
 
             <!-- FESTIVAL BODY -->
             <div id="festival-body" class="fs-3 lh-sm">
-                <div style="display:none">
-                    <p>ArtWife je feministický a rodovo-orientovaný umelecký festival, ktorý sa koná v kultúrnom centre Diera do sveta v Liptovskom Mikuláši. Cieľom festivalu nabúrať, kritizovať a spochybňovať (aj) genderové stereotypy z feministickej perspektívy.</p>
-                </div>
-                <p>ArtWife je feministický a rodovo-orientovaný festival, ktorý sa koná v kultúrnom centre Diera do sveta v Liptovskom Mikuláši. Cieľom festivalu nabúrať, kritizovať a spochybňovať (aj) genderové stereotypy z feministickej perspektívy a zároveň prezentovať súčasných umelcov a umelkyne, ktorých umelecká prax je zameraná na tieto témy. Okrem iného je ambíciou podujatia vzdelávať, kultivovať a scitlivovať publikum v otázkach a témach, ktoré sa v lokálnom kontexte javia ako radikálne či kontroverzné a prispievať tak k normalizácii feministického a rodového diskurzu na Slovensku.</p>
+                <div v-html="data.body"></div>
             </div>
         </div>
 

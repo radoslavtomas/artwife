@@ -22,8 +22,8 @@ use Illuminate\Support\Facades\App;
 require __DIR__.'/auth.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/program', [ProgramController::class, 'program'])->name('program');
-Route::get('/festival/{year?}/{slug?}', [FestivalController::class, 'festival'])->name('festival');
+Route::get('/program/{year?}/{slug?}', [ProgramController::class, 'program'])->name('program');
+Route::get('/festival', [FestivalController::class, 'festival'])->name('festival');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 Route::get('language/{language}', function ($language) {

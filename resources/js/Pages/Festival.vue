@@ -1,8 +1,9 @@
 <script setup>
 import { Head, usePage, Link } from '@inertiajs/vue3'
-import MainLayout from '@/Layouts/MainLayout.vue'
 import { computed, onMounted } from 'vue'
 import { getLocaleVersion } from '@/helpers/index.js'
+import MainLayout from '@/Layouts/MainLayout.vue'
+import FestivalYearCard from '@/Components/FestivalYearCard.vue'
 
 const locale = computed(() => usePage().props.locale).value
 const page = computed(() => usePage().props.page).value.data
@@ -19,7 +20,7 @@ let data = {
 data.page_key = page.page_key
 data.name = getLocaleVersion(page.name, locale).name
 data.body = getLocaleVersion(page.body, locale).body
-data.hero_img = editions[0].image
+data.hero_img = editions[0].image // wil be always sorted by year desc from server
 data.editions = editions
 </script>
 
@@ -51,23 +52,7 @@ data.editions = editions
         <div id="festival-years" class="mt-2">
             <div id="festival-years-grid" class="row gx-2 gy-2">
 
-                <div class="col-12 col-md-6 col-lg-6" v-for="edition in editions" :key="edition.id">
-                    <Link :href="`/festival/${edition.year}`">
-
-                        <div class="card teaser-card teaser-img-container-edition"
-                             :style="{ backgroundImage: 'url(' + `/storage/${edition.image}` + ')' }">
-
-                            <div class="card-img-overlay edition-overlay">
-                                <div class="center">
-                                    <div id="year" class="display-3">
-                                        {{ edition.year }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </Link>
-                </div>
+                <FestivalYearCard v-for="edition in editions" :key="edition.id" :edition="edition" />
 
             </div>
         </div>

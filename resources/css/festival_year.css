@@ -101,7 +101,7 @@
 }
 
 @media screen and (max-width: 1199px) {
-    #festival, #year-programming {
+    #year-programming {
         min-width: 800px !important;
     }
 }

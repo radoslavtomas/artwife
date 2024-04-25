@@ -11,20 +11,8 @@ use Inertia\Inertia;
 
 class FestivalController extends Controller
 {
-    public function festival($year = null, $slug = null)
+    public function festival()
     {
-        if($slug != null) {
-            return Inertia::render('Festival');
-        }
-
-        if($year != null) {
-            $edition = Edition::where('year', $year)->firstOrFail();
-            dd($edition->events()->get());
-            return Inertia::render('FestivalEdition', [
-                'edition' => EditionResource::make($edition),
-            ]);
-        }
-
         $editions = Edition::all()->sortByDesc('year');
         $page = Page::where('page_key', 'festival')->firstOrFail();
 

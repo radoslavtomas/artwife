@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
 
         $statuses = ['draft', 'published', 'archived'];
         $roles = ['admin', 'editor'];
+        $languages = ['sk', 'en'];
 
         foreach ($statuses as $status) {
             Status::factory()->create([
@@ -34,6 +35,12 @@ class DatabaseSeeder extends Seeder
         foreach ($roles as $role) {
             Role::factory()->create([
                 'name' => $role
+            ]);
+        }
+
+        foreach ($languages as $language) {
+            Role::factory()->create([
+                'name' => $language
             ]);
         }
     }
