@@ -21,5 +21,7 @@ import TheFooter from '@/Components/TheFooter.vue'
 <style>
 @import "../../css/festival.css";
 @import "../../css/about.css";
+@import "../../css/festival_year.css";
 @import "../../css/utilities.css";
+
 </style>
