@@ -1,28 +1,27 @@
 <script setup>
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/vue3'
+import { getLocaleVersion } from '@/helpers/index.js'
+
+const locale = computed(() => usePage().props.locale).value
+
+const props = defineProps({
+    page: Object
+})
+
+const name = getLocaleVersion(props.page.name, locale).name
+const body = getLocaleVersion(props.page.body, locale).body
 
 </script>
 
 <template>
     <div class="card">
         <div class="card-header">
-            <h2><strong>Kníhkupectvo</strong></h2>
+            <h2><strong>{{ name }}</strong></h2>
         </div>
 
         <div class="card-body">
-            <div class="row">
-                <div class="col">
-                    <p>Súčasťou kultúrneho centra je tiež špecializované kníhkupectvo, ktorého výber je zameraný na nekomerčné tituly, nezávislých vydavateľov a na knihy s vysokou estetickou kvalitou. Jeho súčasťou je aj segment kvalitnej a súčasnej detskej literatúry, ktorá na slovensku v ponuke chýba.</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <img src="/img/diera_bookstore.jpg__4096x2730_q85_subsampling-2.jpg"
-                         alt=""
-                         class="img-fluid"
-                    >
-                </div>
-            </div>
+            <div class="wysiwyg" v-html="body"></div>
         </div>
     </div>
 </template>

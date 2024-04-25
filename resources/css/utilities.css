@@ -29,6 +29,15 @@
     background-color: rgb(0,0,0);
 }
 
+.wysiwyg img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wysiwyg figcaption {
+    display: none;
+}
+
 @media screen and (max-width: 1200px) {
     .teaser-img-container-program {
         height: 122px;

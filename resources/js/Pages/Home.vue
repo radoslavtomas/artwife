@@ -18,7 +18,7 @@ data.name = getLocaleVersion(page.name, locale).name
 data.body = getLocaleVersion(page.body, locale).body
 
 onMounted(() => {
-    console.log(data)
+    // console.log(data)
 })
 
 </script>

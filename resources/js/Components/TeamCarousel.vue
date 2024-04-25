@@ -9,13 +9,12 @@ const props = defineProps({
     people: Object
 })
 
-// const title = getLocaleVersion(nameAbout.name, locale.value).name
-
 onMounted(() => {
+    // start carousel
     const el = document.getElementsByClassName('carousel-control-next')[0]
     setTimeout(() => {
         el.click()
-    }, 1500)
+    }, 2500)
 })
 
 </script>
@@ -25,7 +24,6 @@ onMounted(() => {
     <div class="gallery-slider">
         <div class="slider-body">
             <div id="carousel-gallery-" class="carousel slide" data-bs-ride="carousel" style="padding:0px;">
-
                 <!-- Photos -->
                 <div class="carousel-inner">
                     <!-- Person -->
@@ -33,101 +31,16 @@ onMounted(() => {
                         v-for="(person, index) in people"
                         :key="person.id"
                         :class="index === 0 ? 'carousel-item active' : 'carousel-item'"
-                        data-bs-interval="1500" >
+                        data-bs-interval="2500" >
 
                         <div class="image-container">
                             <img :src="`/storage/${person.avatar}`" style="cursor:auto">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
                             <h4>{{ person.full_name }}</h4>
-                            <p><em>{{ person.title[0].title }}</em></p>
+                            <p><em>{{ getLocaleVersion(person.title, locale).title }}</em></p>
                         </div>
                     </div>
-
-<!--                    &lt;!&ndash; Jan Hanzel Mikus (finančný manažment, administratíva) &ndash;&gt;-->
-<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
-
-<!--                        <div class="image-container">-->
-<!--                            <img src="/img/2__jan_mikus.jpg" style="cursor:auto">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-caption d-none d-md-block">-->
-<!--                            <h4>Ján Mikuš</h4>-->
-<!--                            <p><em>finančný manažment, administratíva</em></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    &lt;!&ndash; Natalia Kudnisova (produkcia) &ndash;&gt;-->
-<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
-
-<!--                        <div class="image-container">-->
-<!--                            <img src="/img/3__natalia_kundisova_Auru6xw.jpg" style="cursor:auto">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-caption d-none d-md-block">-->
-<!--                            <h4>Natália Kundisova</h4>-->
-<!--                            <p><em>produkcia</em></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    &lt;!&ndash; Barbora Bohusova (grafika, sociálne siete) &ndash;&gt;-->
-<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
-
-<!--                        <div class="image-container">-->
-<!--                            <img src="/img/4__barbora_bohusova_SRqaNkd.jpg" style="cursor:auto">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-caption d-none d-md-block">-->
-<!--                            <h4>Barbora Bohušová</h4>-->
-<!--                            <p><em>grafika, sociálne siete</em></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    &lt;!&ndash; Matej Zofcin (hudobna dramaturgia) &ndash;&gt;-->
-<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
-
-<!--                        <div class="image-container">-->
-<!--                            <img src="/img/5__matej_zofcin_7WiGXwk.jpg" style="cursor:auto">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-caption d-none d-md-block">-->
-<!--                            <h4>Matej Žofčín</h4>-->
-<!--                            <p><em>hudobná dramaturgia</em></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    &lt;!&ndash; Andrea Kapráliková (dramaturgia školy a komunity) &ndash;&gt;-->
-<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
-
-<!--                        <div class="image-container">-->
-<!--                            <img src="/img/6__andrea_kapralikova_hiQwBn9.jpg" style="cursor:auto">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-caption d-none d-md-block">-->
-<!--                            <h4>Andrea Kapráliková</h4>-->
-<!--                            <p><em>dramaturgia školy a komunity</em></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    &lt;!&ndash; Stanislav Stofcik (technika - zvuk)  &ndash;&gt;-->
-<!--                    <div class="carousel-item" data-bs-interval="1500" >-->
-
-<!--                        <div class="image-container">-->
-<!--                            <img src="/img/7__stanislav_stofcik_yyy9ao5.jpg" style="cursor:auto">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-caption d-none d-md-block">-->
-<!--                            <h4>Stanisla Štofčík</h4>-->
-<!--                            <p><em>technika - zvuk</em></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    &lt;!&ndash; Jozef Kosik (technika - svetlo) &ndash;&gt;-->
-<!--                    <div class="carousel-item" data-bs-interval="1500">-->
-
-<!--                        <div class="image-container">-->
-<!--                            <img src="/img/8__jozef_kosik_18jyRhG.jpg" style="cursor:auto">-->
-<!--                        </div>-->
-<!--                        <div class="carousel-caption d-none d-md-block">-->
-<!--                            <h4>Jozef Kosik</h4>-->
-<!--                            <p><em>technika - svetlo</em></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
                 </div>
 
                 <!-- Prev/Next Controls -->

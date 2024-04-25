@@ -10,22 +10,24 @@ import DieraSpace from '@/Components/DieraSpace.vue'
 import Dedication from '@/Components/Dedication.vue'
 
 const locale = computed(() => usePage().props.locale)
-const pages = computed(() => usePage().props.pages)
+const pages = computed(() => usePage().props.pages).value.data
 const people = computed(() => usePage().props.people).value.data
 
-let about = {
+let data = {
     name: null,
     body: null
 }
 
-let nameAbout = pages.value.data.filter((page) => page.page_key === 'about')[0];
-about.name = getLocaleVersion(nameAbout.name, locale.value).name
+const aboutPage = pages.filter((page) => page.page_key === 'about')[0];
+const bookstorePage = pages.filter((page) => page.page_key === 'bookstore')[0];
+const spacePage = pages.filter((page) => page.page_key === 'space')[0];
+const supportPage = pages.filter((page) => page.page_key === 'support')[0];
 
-let bodyAbout = pages.value.data.filter((page) => page.page_key === 'about')[0];
-about.body = getLocaleVersion(bodyAbout.body, locale.value).body
+data.name = getLocaleVersion(aboutPage.name, locale.value).name
+data.body = getLocaleVersion(aboutPage.body, locale.value).body
 
 onMounted(() => {
-    console.log(people)
+    console.log(bookstorePage)
 })
 
 </script>
@@ -38,31 +40,28 @@ onMounted(() => {
             <!-- gallery of members of diera -->
             <TeamCarousel :people="people"/>
 
-            <h1>
-                {{ about.name }}
-            </h1>
+            <h1>{{ data.name }}</h1>
 
             <div id="about-content">
-                <div v-html="about.body" />
+                <div v-html="data.body" />
 
                 <div id="about-sections" class="row">
                     <div class="col col-sm-11 col-md-11 col-lg-4">
-                        <Bookshop/>
+                        <Bookshop :page="bookstorePage" />
                     </div>
 
                     <div class="col col-sm-11 col-md-11 col-lg-3">
-                        <TeamList/>
+                        <TeamList :people="people" />
                     </div>
 
                     <div class="col col-sm-11 col-md-11 col-lg-3">
-                        <DieraSpace/>
+                        <DieraSpace :page="spacePage"/>
                     </div>
                 </div>
             </div>
 
-            <Dedication/>
+            <Dedication :page="supportPage"/>
         </div>
-        <!-- </div> -->
     </MainLayout>
 </template>
 

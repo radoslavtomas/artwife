@@ -14,8 +14,8 @@ class AboutController extends Controller
 {
     public function about()
     {
-        $pages = Page::whereIn('page_key', ['about', 'home'])->get();
-        $people = People::where('status_id', 2)->get(); // published
+        $pages = Page::whereIn('page_key', ['about', 'home', 'bookstore', 'space', 'support'])->get();
+        $people = People::where('status_id', 2)->get()->sortBy('order'); // status_id = 2 (published)
 
         return Inertia::render('About', [
             'pages' => PageResource::collection($pages),

@@ -1,10 +1,20 @@
 <script setup>
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/vue3'
+import { getLocaleVersion } from '@/helpers/index.js'
 
+const locale = computed(() => usePage().props.locale).value
+
+const props = defineProps({
+    page: Object
+})
+
+const body = getLocaleVersion(props.page.body, locale).body
 </script>
 
 <template>
     <div id="dedication">
-        <p>Program kultúrneho centra Diera do sveta je podporovaný z verejných zdrojov Slovenskej republiky Fondom na podporu umenia, ktorý je hlavným partnerom projektu, programom Aktívna komunita Nadácie Orange, a doplnkovou podnikateľskou činnosťou - kaviareň a špecializované kníhkupectvo - o.z. Diera do sveta.</p>
+        <div v-html="body"></div>
     </div>
 
     <!-- LOGOS -->
