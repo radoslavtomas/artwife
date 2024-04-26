@@ -2,7 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Resources\PeopleResource;
 use App\Models\Navigation;
+use App\Models\People;
+use App\Models\Setting;
+use App\Models\Translation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Inertia\Middleware;
@@ -34,15 +38,24 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
-            'auth' => [
-                'user' => $request->user(),
-            ],
+//            'auth' => [
+//                'user' => $request->user(),
+//            ],
             'navigation' => function () {
                 return $this->getNavigationItems();
             },
             'locale' => function () {
                 return app()->getLocale();
             },
+            'contacts' => function () {
+                return $this->getEssentialPeople();
+            },
+            'translations' => function () {
+                return $this->getTranslations();
+            },
+            'settings' => function () {
+                return $this->getSettings();
+            }
         ];
     }
 
@@ -54,5 +67,33 @@ class HandleInertiaRequests extends Middleware
         ])->first();
 
         return $navigation ? $navigation['navigation'] : null;
+    }
+
+    private function getEssentialPeople()
+    {
+        $contacts = People::where('essential', 1)->get()->sortBy('order');
+
+        return PeopleResource::collection($contacts);
+    }
+
+    private function getSettings()
+    {
+        return $this->getCollectionsAsKeyValuePairs(Setting::where('active', 1)->get());
+    }
+
+    private function getTranslations()
+    {
+        return $this->getCollectionsAsKeyValuePairs(Translation::where('active', 1)->get());
+    }
+
+    private function getCollectionsAsKeyValuePairs($settings): array
+    {
+        $data = [];
+
+        foreach ($settings as $item) {
+            $data[$item['key']] = $item['value'];
+        }
+
+        return $data;
     }
 }

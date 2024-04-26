@@ -27,7 +27,7 @@ data.name = getLocaleVersion(aboutPage.name, locale.value).name
 data.body = getLocaleVersion(aboutPage.body, locale.value).body
 
 onMounted(() => {
-    console.log(bookstorePage)
+    // console.log(bookstorePage)
 })
 
 </script>

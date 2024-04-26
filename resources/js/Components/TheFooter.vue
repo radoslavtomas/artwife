@@ -1,5 +1,17 @@
 <script setup>
+import { computed, onMounted } from 'vue'
+import { usePage } from '@inertiajs/vue3'
+import { getLocaleVersion } from '@/helpers/index.js'
 
+const locale = computed(() => usePage().props.locale).value
+const contacts = computed(() => usePage().props.contacts).value.data
+const settings = computed(() => usePage().props.settings).value
+const translations = computed(() => usePage().props.translations).value
+
+onMounted(() => {
+    // console.log(settings)
+    // console.log(translations)
+})
 </script>
 
 <template>
@@ -22,32 +34,22 @@
                                     <div class="card-body">
 
                                         <div style="margin-bottom: 20px;">
-                                            <b>KONTAKTY</b>
+                                            <b class="text-uppercase">{{ getLocaleVersion(translations['contacts'], locale).value }}</b>
                                             <div class="text-muted" style="line-height:1.1;">
-                                                dieradosveta (at) gmail.com
+                                                {{ settings['main_email'] }}
                                             </div>
                                         </div>
 
                                         <ul class="list-group" style="list-style: none;" >
-                                            <li class="" style="line-height:1.1; margin-bottom: 10px;">
-                                                <b>Ján Mikuš</b>
-                                                <br>
-                                                &nbsp &nbsp
-                                                +421 949 505 458
-                                            </li>
 
-                                            <li class="" style="line-height:1.1; margin-bottom: 10px;">
-                                                <b>Jana Hanzelová</b>
+                                            <li v-for="person in contacts"
+                                                :key="person.id"
+                                                class=""
+                                                style="line-height:1.1; margin-bottom: 10px;">
+                                                <b>{{ person.full_name }}</b>
                                                 <br>
                                                 &nbsp &nbsp
-                                                +421 949 368 311
-                                            </li>
-
-                                            <li class="" style="line-height:1.1;margin-bottom: 10px;">
-                                                <b>Barbora Bohušová</b>
-                                                <br>
-                                                &nbsp &nbsp
-                                                +421 915 350 327
+                                                {{ person.phone }}
                                             </li>
 
                                         </ul>
@@ -69,9 +71,12 @@
 
                                             <div class="card-body">
 
-                                                <b>PREVÁDZKA</b>
+                                                <b class="text-uppercase">{{ getLocaleVersion(translations['operation_premisses'], locale).value }}</b>
                                                 <div style="line-height:1.1">
-                                                    Námestie osloboditeľov 1, č.s. 61 • 0301 01, Liptovský Mikuláš • Slovensko
+                                                    {{ settings['operation_address_line_1'] }} •
+                                                    {{ settings['operation_address_postcode'] }},
+                                                    {{ settings['operation_address_city'] }} •
+                                                    {{ getLocaleVersion(translations['slovakia'], locale).value }}
                                                 </div>
 
                                             </div>
@@ -89,9 +94,13 @@
 
                                         <div class="card">
                                             <div class="card-body">
-                                                <b>SÍDLO</b>
+                                                <b class="text-uppercase">{{ getLocaleVersion(translations['registered_office'], locale).value }}</b>
                                                 <div style="line-height:1.1">
-                                                    Diera do sveta o.z. • A. Bernoláka 42/11 • 031 01, Liptovský Mikuláš • Slovensko
+                                                    {{ settings['office_address_title'] }} •
+                                                    {{ settings['office_address_line_1'] }} •
+                                                    {{ settings['office_address_postcode'] }},
+                                                    {{ settings['office_address_city'] }} •
+                                                    {{ getLocaleVersion(translations['slovakia'], locale).value }}
                                                 </div>
 
                                             </div>
@@ -122,11 +131,11 @@
 
                                             <div class="card-body">
                                                 <div style="line-height:1.1">
-                                                    <b>IČO:</b> 423 857 76
+                                                    <b>IČO:</b> {{ settings['ico'] }}
                                                     <br>
-                                                    <b>DIČ:</b> 2024 0736 01
+                                                    <b>DIČ:</b> {{ settings['dic'] }}
                                                     <br>
-                                                    Nie sme platcami DPH
+                                                    {{ getLocaleVersion(translations['vat_message'], locale).value }}
                                                 </div>
                                             </div>
 
@@ -140,13 +149,13 @@
 
                                         <div class="card" style="margin-bottom: 20px;">
                                             <div class="card-body">
-                                                <span class="card-title"><b>BANKOVÉ SPOJENIE</b></span>
+                                                <b class="text-uppercase">{{ getLocaleVersion(translations['bank_account'], locale).value }}</b>
                                                 <div style="line-height:1.1">
-                                                    Banka: FIO
+                                                    Banka: {{ settings['bank'] }}
                                                     <br>
-                                                    IBAN: <span style="font-size:11px;">SK8983300000002500592531</span>
+                                                    IBAN: <span style="font-size:11px;">{{ settings['iban'] }}</span>
                                                     <br>
-                                                    BIC/SWIFT: FIOZSKBAXXX
+                                                    BIC/SWIFT: {{ settings['bic_swift'] }}
                                                 </div>
                                             </div>
                                         </div>
@@ -164,7 +173,7 @@
                                         <div class="card" style="">
                                             <div id="fpu-ded" class="card-body">
                                                 <div style="line-height:1;font-size:13px;">
-                                                    Podujatia KC Diera do sveta z verejných zdrojov podporil <a href='https://www.fpu.sk/sk/'>Fond na podporu umenia</a>. Fond na podporu umenia je naším hlavným partnerom.
+                                                    <span v-html="getLocaleVersion(translations['fpu_support'], locale).value"></span>
                                                 </div>
                                             </div>
 
@@ -185,7 +194,7 @@
                                         <div class="card" style="">
                                             <div id="orange-ded" class="card-body">
                                                 <div style="line-height:1;font-size:13px;">
-                                                    Tento projekt sa uskutočnil vďaka podpore v programe <a href='https://www.nadaciaorange.sk/sk/aktivna-komunita-s-nadaciou-orange/'>Aktívna komunita s Nadáciou Orange</a>.
+                                                    <span v-html="getLocaleVersion(translations['orange_support'], locale).value"></span>
                                                 </div>
                                             </div>
 
@@ -210,11 +219,11 @@
                 <div id="copyright" class="row">
 
                     <div class="col-12">
-                        © Copyright Diera do sveta 2024. Všetky práva vyhradené. <a href="/ochrana-sukromia/">GDPR</a>.
+                        &copy; Copyright Diera do sveta {{ new Date().getFullYear() }}. {{ getLocaleVersion(translations['copyright'], locale).value }} <a href="/ochrana-sukromia/">GDPR</a>.
                     </div>
 
                     <div class="col-12">
-                        <b>dizajn:</b> <a href="http://www.bobaxbasa.com/">boba</a>  <b>dev:</b> <a href="https://github.com/mar-vic">marvic</a> <b>cms:</b> <a href="https://www.django-cms.org/en/">djangoCMS</a>
+                        <b>dizajn:</b> <a href="http://www.bobaxbasa.com/">boba</a>
                     </div>
 
                 </div>
