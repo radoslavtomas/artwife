@@ -34,7 +34,7 @@ onMounted(() => {
 
 <template>
     <MainLayout>
-        <Head title="About" />
+        <Head :title="data.name" />
 
         <div id="about" class="">
             <!-- gallery of members of diera -->

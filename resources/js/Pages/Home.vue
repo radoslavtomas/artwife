@@ -6,6 +6,9 @@ import { getLocaleVersion } from '@/helpers/index.js'
 
 const locale = computed(() => usePage().props.locale).value
 const page = computed(() => usePage().props.page).value.data
+const edition = computed(() => usePage().props.edition).value.data
+const events = computed(() => usePage().props.events).value.data
+const title = locale === 'sk' ? 'Domov' : 'Home'
 
 let data = {
     name: null,
@@ -18,14 +21,16 @@ data.name = getLocaleVersion(page.name, locale).name
 data.body = getLocaleVersion(page.body, locale).body
 
 onMounted(() => {
-    // console.log(data)
+    console.log(data)
+    console.log(edition)
+    console.log(events)
 })
 
 </script>
 
 <template>
     <MainLayout>
-        <Head title="Home" />
+        <Head :title="title" />
 
         <a  href="/program/ai-kreativita/" class="marquee" style="text-decoration:none">
             <div class="marquee__content">
@@ -100,7 +105,7 @@ onMounted(() => {
             <!-- TEASER IMAGE -->
             <div
                 class="teaser-img-container-large"
-                style="background-image: url('/img/spiritualita_event.png__600x400_q85_crop_subsampling-2_upscale.jpg')"
+                :style="{ backgroundImage: 'url(' + `/storage/${edition.image}` + ')' }"
             ></div>
 
 
