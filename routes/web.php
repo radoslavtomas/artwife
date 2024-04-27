@@ -25,6 +25,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/program/{year?}/{slug?}', [ProgramController::class, 'program'])->name('program');
 Route::get('/festival', [FestivalController::class, 'festival'])->name('festival');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
 
 Route::get('language/{language}', function ($language) {
     Session()->put('locale', $language);

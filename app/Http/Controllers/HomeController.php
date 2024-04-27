@@ -18,4 +18,9 @@ class HomeController extends Controller
             'page' => PageResource::make($page),
         ]);
     }
+
+    public function privacy()
+    {
+        return Inertia::render('Privacy');
+    }
 }

@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onMounted } from 'vue'
-import { usePage } from '@inertiajs/vue3'
+import { usePage, Link } from '@inertiajs/vue3'
 import { getLocaleVersion } from '@/helpers/index.js'
 
 const locale = computed(() => usePage().props.locale).value
@@ -30,9 +30,7 @@ onMounted(() => {
                             <!-- Contacts -->
                             <div id="footer-contacts" class="col-auto">
                                 <div class="card">
-
                                     <div class="card-body">
-
                                         <div style="margin-bottom: 20px;">
                                             <b class="text-uppercase">{{ getLocaleVersion(translations['contacts'], locale).value }}</b>
                                             <div class="text-muted" style="line-height:1.1;">
@@ -53,11 +51,8 @@ onMounted(() => {
                                             </li>
 
                                         </ul>
-
                                     </div>  <!-- /card-body -->
-
                                 </div>  <!-- /card -->
-
                             </div>  <!-- /footer-contacts -->
 
                             <!-- Address -->
@@ -66,11 +61,8 @@ onMounted(() => {
                                 <!-- Operation -->
                                 <div class="row">
                                     <div class="col">
-
                                         <div class="card" style="margin-bottom: 20px;">
-
                                             <div class="card-body">
-
                                                 <b class="text-uppercase">{{ getLocaleVersion(translations['operation_premisses'], locale).value }}</b>
                                                 <div style="line-height:1.1">
                                                     {{ settings['operation_address_line_1'] }} •
@@ -78,20 +70,14 @@ onMounted(() => {
                                                     {{ settings['operation_address_city'] }} •
                                                     {{ getLocaleVersion(translations['slovakia'], locale).value }}
                                                 </div>
-
                                             </div>
-
                                         </div>
-
                                     </div>
-
                                 </div>  <!-- /operation row -->
 
                                 <!-- Registered office -->
                                 <div class="row">
-
                                     <div class="col">
-
                                         <div class="card">
                                             <div class="card-body">
                                                 <b class="text-uppercase">{{ getLocaleVersion(translations['registered_office'], locale).value }}</b>
@@ -102,19 +88,13 @@ onMounted(() => {
                                                     {{ settings['office_address_city'] }} •
                                                     {{ getLocaleVersion(translations['slovakia'], locale).value }}
                                                 </div>
-
                                             </div>
-
                                         </div>
-
                                     </div>
-
                                 </div>  <!-- /registered-office row -->
 
                             </div>  <!-- /address col -->
-
                         </div>
-
                     </div>  <!-- /left-footer col -->
 
                     <!-- Right side of the footer -->
@@ -219,7 +199,7 @@ onMounted(() => {
                 <div id="copyright" class="row">
 
                     <div class="col-12">
-                        &copy; Copyright Diera do sveta {{ new Date().getFullYear() }}. {{ getLocaleVersion(translations['copyright'], locale).value }} <a href="/ochrana-sukromia/">GDPR</a>.
+                        &copy; Copyright Diera do sveta {{ new Date().getFullYear() }}. {{ getLocaleVersion(translations['copyright'], locale).value }} <Link href="/privacy">GDPR</Link>.
                     </div>
 
                     <div class="col-12">

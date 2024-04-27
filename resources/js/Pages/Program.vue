@@ -27,8 +27,8 @@ data.year = edition.year
 data.hero_img = edition.image
 
 onMounted(() => {
-    console.log(edition)
-    console.log(events)
+    // console.log(edition)
+    // console.log(events)
 })
 
 </script>
@@ -70,7 +70,8 @@ onMounted(() => {
                     v-for="event in events"
                     :event="event"
                     :year="edition.year"
-                    :key="event.id" />
+                    :key="event.id"
+                />
 
             </div>
         </div>

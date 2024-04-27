@@ -61,6 +61,7 @@ class HandleInertiaRequests extends Middleware
 
     private function getNavigationItems()
     {
+        // TODO: cache navigation
         $navigation = Navigation::where([
             ['navigation_key', 'main'],
             ['language', app()->getLocale()]
@@ -71,6 +72,7 @@ class HandleInertiaRequests extends Middleware
 
     private function getEssentialPeople()
     {
+        // TODO: cache people
         $contacts = People::where('essential', 1)->get()->sortBy('order');
 
         return PeopleResource::collection($contacts);
@@ -78,11 +80,13 @@ class HandleInertiaRequests extends Middleware
 
     private function getSettings()
     {
+        // TODO: cache settings
         return $this->getCollectionsAsKeyValuePairs(Setting::where('active', 1)->get());
     }
 
     private function getTranslations()
     {
+        // TODO: cache translations
         return $this->getCollectionsAsKeyValuePairs(Translation::where('active', 1)->get());
     }
 
