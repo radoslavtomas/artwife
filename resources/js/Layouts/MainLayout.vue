@@ -20,9 +20,9 @@ import TheFooter from '@/Components/TheFooter.vue'
 
 <style>
 @import "../../css/home.css";
+@import "../../css/festival.css";
 @import "../../css/about.css";
 @import "../../css/festival_year.css";
-@import "../../css/festival.css";
 @import "../../css/event.css";
 @import "../../css/utilities.css";
 

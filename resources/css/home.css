@@ -105,7 +105,7 @@
     background-position: center center;
     background-size: cover;
     border: 2px solid white;
-    height: 320px;
+    height: 280px;
 }
 
 .teaser-body-container {
@@ -172,6 +172,10 @@
     color: white;
 }
 
+.hp-teaser:hover .text-muted {
+    color:white !important;
+}
+
 .schedule {
     border-top: 2px solid black;
     margin-left: 0px;
@@ -201,7 +205,7 @@
     }
 
     .teaser-img-container {
-        height: 280px;
+        height: 230px;
     }
 }
 
