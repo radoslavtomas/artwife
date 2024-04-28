@@ -19,10 +19,15 @@ import TheFooter from '@/Components/TheFooter.vue'
 </template>
 
 <style>
-@import "../../css/festival.css";
+@import "../../css/home.css";
 @import "../../css/about.css";
 @import "../../css/festival_year.css";
+@import "../../css/festival.css";
 @import "../../css/event.css";
 @import "../../css/utilities.css";
+
+#festival {
+    margin-bottom: 40px;
+}
 
 </style>

@@ -34,7 +34,7 @@ onMounted(() => {
 
 <template>
     <MainLayout>
-        <Head title="Festival" />
+        <Head :title="data.title" />
 
         <div id="event" class="card p-2">
             <div class="row g-0">
