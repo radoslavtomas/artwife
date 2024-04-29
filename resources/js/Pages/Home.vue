@@ -34,7 +34,7 @@ onMounted(() => {
     <MainLayout>
         <Head :title="title" />
 
-        <Marquee :event="events[0]" />
+        <Marquee v-if="events.length" :event="events[0]" />
 
         <!-- Teasers for featured events and articles -->
         <div id="featured" v-if="events.length">
