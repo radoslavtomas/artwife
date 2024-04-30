@@ -38,6 +38,11 @@
     display: none;
 }
 
+.event-card p {
+    padding: 0;
+    margin: 0;
+}
+
 @media screen and (max-width: 1200px) {
     .teaser-img-container-program {
         height: 122px;

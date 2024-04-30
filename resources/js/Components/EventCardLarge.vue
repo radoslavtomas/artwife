@@ -29,7 +29,8 @@ const teaser = getLocaleVersion(props.event.teaser, locale).teaser
                     <header :class="props.event.place ? '' : 'pb-3'">
                         <h2 class="display-3 lh-1 text-uppercase">{{ title }}</h2>
                     </header>
-                    <h5 v-if="props.event.place" class="text-muted fst-italic pb-2">{{ props.event.place }}</h5>
+                    <p>Prednaska</p>
+                    <p v-if="props.event.place" class="h6 pb-2">{{ props.event.place }}</p>
                     <p>{{ teaser }}</p>
                 </div>
 

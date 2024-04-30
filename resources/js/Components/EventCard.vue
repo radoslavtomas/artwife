@@ -25,9 +25,11 @@ const title = getLocaleVersion(props.event.title, locale).title
                     :style="{ backgroundImage: 'url(' + `/storage/${event.image}` + ')' }"
                 ></div>
 
-                <div class="card-body p-0 fs-3 lh-sm">
+                <div class="card-body event-card p-0 fs-3 lh-sm">
                     <!-- EVENT TITLE -->
                     <header><h2 class="fs-1 lh-1 text-uppercase">{{ title }}</h2></header>
+                    <p class="">Prednaska</p>
+                    <p v-if="props.event.place" class="h6 pb-2">{{ props.event.place }}</p>
                 </div>
 
                 <div class="card-footer fs-4 teaser-footer p-0 m-1">
