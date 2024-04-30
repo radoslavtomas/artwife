@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('edition_id')->constrained();
             $table->foreignId('status_id')->constrained();
+            $table->json('type')->nullable();
             $table->boolean('featured')->default(false);
             $table->string('image');
             $table->json('title');

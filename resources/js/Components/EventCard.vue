@@ -11,6 +11,7 @@ const props = defineProps({
 })
 
 const title = getLocaleVersion(props.event.title, locale).title
+const type = getLocaleVersion(props.event.type, locale).type
 
 </script>
 
@@ -28,7 +29,7 @@ const title = getLocaleVersion(props.event.title, locale).title
                 <div class="card-body event-card p-0 fs-3 lh-sm">
                     <!-- EVENT TITLE -->
                     <header><h2 class="fs-1 lh-1 text-uppercase">{{ title }}</h2></header>
-                    <p class="">Prednaska</p>
+                    <p v-if="type" class="">{{ type }}</p>
                     <p v-if="props.event.place" class="h6 pb-2">{{ props.event.place }}</p>
                 </div>
 

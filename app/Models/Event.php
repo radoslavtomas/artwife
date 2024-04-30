@@ -18,6 +18,7 @@ class Event extends Model
         'edition_id',
         'status_id',
         'featured',
+        'type',
         'image',
         'title',
         'slug',
@@ -39,6 +40,7 @@ class Event extends Model
     protected function casts(): array
     {
         return [
+            'type' => 'array',
             'title' => 'array',
             'teaser' => 'array',
             'body' => 'array',

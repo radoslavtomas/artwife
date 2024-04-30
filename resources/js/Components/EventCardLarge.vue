@@ -12,6 +12,7 @@ const props = defineProps({
 
 const title = getLocaleVersion(props.event.title, locale).title
 const teaser = getLocaleVersion(props.event.teaser, locale).teaser
+const type = getLocaleVersion(props.event.type, locale).type
 
 </script>
 
@@ -29,7 +30,7 @@ const teaser = getLocaleVersion(props.event.teaser, locale).teaser
                     <header :class="props.event.place ? '' : 'pb-3'">
                         <h2 class="display-3 lh-1 text-uppercase">{{ title }}</h2>
                     </header>
-                    <p>Prednaska</p>
+                    <p v-if="type">{{ type }}</p>
                     <p v-if="props.event.place" class="h6 pb-2">{{ props.event.place }}</p>
                     <p>{{ teaser }}</p>
                 </div>

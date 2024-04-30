@@ -43,6 +43,11 @@ class EventResource extends Resource
                         ->label('Status')
                         ->options(Status::all()->pluck('name', 'id'))
                         ->required(),
+                    Forms\Components\Repeater::make('type')->schema([
+                        Forms\Components\Select::make('language')
+                            ->options(Language::all()->pluck('name', 'name')),
+                        Forms\Components\TextInput::make('type'),
+                    ]),
                     Forms\Components\Checkbox::make('featured'),
                 ])->columns(1),
                 Forms\Components\Fieldset::make('When and where')->schema([
@@ -50,8 +55,8 @@ class EventResource extends Resource
                         ->required(),
                     Forms\Components\TimePicker::make('time_start')
                         ->required(),
-                    Forms\Components\DatePicker::make('date_end'),
-                    Forms\Components\TimePicker::make('time_end'),
+//                    Forms\Components\DatePicker::make('date_end'),
+//                    Forms\Components\TimePicker::make('time_end'),
                     Forms\Components\TextInput::make('place')
                         ->required(),
                 ]),
@@ -80,7 +85,7 @@ class EventResource extends Resource
                         Forms\Components\Select::make('language')
                             ->options(Language::all()->pluck('name', 'name'))
                             ->required(),
-                        Forms\Components\TextInput::make('body')->required(),
+                        Forms\Components\RichEditor::make('body')->required(),
                     ]),
                     Forms\Components\TextInput::make('slug')
                         ->required()

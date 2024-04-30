@@ -22,6 +22,7 @@ class EventResource extends JsonResource
             'date_end' => $this->date_end ? $this->date_end->format('d.m') : null,
             'time_end' => $this->time_end ? $this->time_end->format('H:i') : null,
             'place' => $this->place,
+            'type' => $this->type,
             'image' => $this->image,
             'title' => $this->title,
             'teaser' => $this->teaser,
