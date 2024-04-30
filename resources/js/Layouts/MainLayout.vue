@@ -1,6 +1,7 @@
 <script setup>
 import Navigation from '@/Components/Navigation.vue'
 import TheFooter from '@/Components/TheFooter.vue'
+import CookieConsent from '@/Components/CookieConsent.vue'
 
 </script>
 
@@ -16,6 +17,8 @@ import TheFooter from '@/Components/TheFooter.vue'
     <footer id="site-footer">
         <TheFooter />
     </footer>
+
+    <CookieConsent />
 </template>
 
 <style>
