@@ -49,8 +49,6 @@ function acceptCookieConsent(){
 const accepted = ref(false)
 
 onMounted(() => {
-    console.log(locale)
-    console.log(translations)
     let cookie_consent = getCookie("user_cookie_consent");
 
     if(cookie_consent !== ""){

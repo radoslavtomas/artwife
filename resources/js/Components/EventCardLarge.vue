@@ -31,7 +31,7 @@ const type = getLocaleVersion(props.event.type, locale).type
                         <h2 class="display-3 lh-1 text-uppercase">{{ title }}</h2>
                     </header>
                     <p v-if="type">{{ type }}</p>
-                    <p v-if="props.event.place" class="h6 pb-2">{{ props.event.place }}</p>
+                    <p v-if="props.event.place" class="h6 pb-2">{{ getLocaleVersion(props.event.place, locale).place }}</p>
                     <p>{{ teaser }}</p>
                 </div>
 

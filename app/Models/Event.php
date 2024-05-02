@@ -44,6 +44,7 @@ class Event extends Model
             'title' => 'array',
             'teaser' => 'array',
             'body' => 'array',
+            'place' => 'array',
             'date_start' => 'datetime',
             'time_start' => 'datetime',
             'date_end' => 'datetime',

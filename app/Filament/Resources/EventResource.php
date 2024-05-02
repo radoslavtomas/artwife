@@ -48,7 +48,7 @@ class EventResource extends Resource
                             ->options(Language::all()->pluck('name', 'name')),
                         Forms\Components\TextInput::make('type'),
                     ]),
-                    Forms\Components\Checkbox::make('featured'),
+//                    Forms\Components\Checkbox::make('featured'),
                 ])->columns(1),
                 Forms\Components\Fieldset::make('When and where')->schema([
                     Forms\Components\DatePicker::make('date_start')
@@ -57,9 +57,12 @@ class EventResource extends Resource
                         ->required(),
 //                    Forms\Components\DatePicker::make('date_end'),
 //                    Forms\Components\TimePicker::make('time_end'),
-                    Forms\Components\TextInput::make('place')
-                        ->required(),
-                ]),
+                    Forms\Components\Repeater::make('place')->schema([
+                        Forms\Components\Select::make('language')
+                            ->options(Language::all()->pluck('name', 'name')),
+                        Forms\Components\TextInput::make('place'),
+                    ]),
+                ])->columns(1),
                 Forms\Components\Fieldset::make('Main')->schema([
                     Forms\Components\FileUpload::make('image')
                         ->image()

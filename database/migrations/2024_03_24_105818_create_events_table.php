@@ -24,7 +24,7 @@ return new class extends Migration
             $table->time('time_start');
             $table->date('date_end')->nullable();
             $table->time('time_end')->nullable();
-            $table->string('place')->nullable();
+            $table->json('place')->nullable();
             $table->json('teaser');
             $table->json('body');
             $table->timestamps();

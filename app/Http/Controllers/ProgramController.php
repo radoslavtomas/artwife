@@ -28,7 +28,10 @@ class ProgramController extends Controller
         }
 
         $edition = Edition::where($search)->orderBy('year', 'desc')->firstOrFail();
-        $events = $edition->events()->get()->sortByDesc('date_start');
+        $events = $edition->events()->get()->sortBy([
+            ['date_start', 'asc'],
+            ['time_start', 'asc'],
+        ]);
 
         return Inertia::render('Program', [
             'edition' => EditionResource::make($edition),

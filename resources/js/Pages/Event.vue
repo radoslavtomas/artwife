@@ -25,7 +25,7 @@ data.date_end = event.date_end
 data.title = getLocaleVersion(event.title, locale).title
 data.body = getLocaleVersion(event.body, locale).body
 data.hero_img = event.image
-data.place = event.place
+data.place = getLocaleVersion(event.place, locale).place
 
 onMounted(() => {
     console.log(event)
@@ -63,7 +63,7 @@ onMounted(() => {
                 <div class="col teaser-text-container">
                     <div class="card-body h-100 p-0 pt-3">
                         <h1 class="display-2 lh-1 card-title">{{ data.title }}</h1>
-                        <h6 class="h4 mb-4 text-muted"><em>→ {{ data.place }}</em></h6>
+                        <h6 class="h4 mb-4"><em>→ {{ data.place }}</em></h6>
                     </div>
                 </div>
             </div>
