@@ -6,22 +6,13 @@
 
         <title inertia>{{ config('app.name', 'Artwife') }}</title>
 
-        <link rel="icon" type="image/x-icon" href="/static/images/DIERA_ELIPSA.svg">
-
-        <!-- OPENGRAPH TAGS -->
-        <meta property="og:title" content="ARTWIFE 2023: JAZYK | Diera do sveta" />
-        <meta property="og:url" content="/festivaly/artwife/jazyk/" />
-        <meta property="og:type" content="article" />
-
-        <meta property="og:image" content="/media/filer_public_thumbnails/filer_public/7d/15/7d150d89-95e1-4ae6-a302-acfa36041d66/cover.png__1200x630_q85_crop_subsampling-2_upscale.jpg" />
+        <link rel="icon" type="image/x-icon" href="/img/DIERA_ELIPSA.svg">
 
         <!-- LOAD ELASTIC FONT -->
         <style>
             body {
                 background-image: url('/img/2024_marec_web_bckgrnd.png');
             }
-
-
         </style>
 
         <!-- Alpine Plugins -->
