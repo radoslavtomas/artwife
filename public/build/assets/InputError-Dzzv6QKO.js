@@ -1,1 +1,0 @@
-import{k as s,z as a,a as t,b as r,d as c,t as i}from"./app-Csfepi39.js";const n={class:"invalid-feedback"},d={__name:"InputError",props:{message:{type:String}},setup(e){return(o,l)=>s((t(),r("div",null,[c("div",n,i(e.message),1)],512)),[[a,e.message]])}};export{d as _};
