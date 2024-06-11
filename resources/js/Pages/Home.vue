@@ -13,14 +13,22 @@ const events = computed(() => usePage().props.events).value.data
 const title = locale === 'sk' ? 'Domov' : 'Home'
 
 let data = {
-    name: null,
-    body: null,
+    page: {
+        name: null,
+        body: null,
+    },
+    edition: {
+        name: null,
+        body: null,
+    },
     hero_img: null,
-    editions: null,
 }
 
-data.name = getLocaleVersion(page.name, locale).name
-data.body = getLocaleVersion(page.body, locale).body
+data.page.name = getLocaleVersion(page.name, locale).name
+data.page.body = getLocaleVersion(page.body, locale).body
+
+data.edition.name = getLocaleVersion(edition.title, locale).title
+data.edition.body = getLocaleVersion(edition.body, locale).body
 
 onMounted(() => {
     // console.log(data)
@@ -56,15 +64,26 @@ onMounted(() => {
                 :style="{ backgroundImage: 'url(' + `/storage/${edition.image}` + ')' }"
             ></div>
 
+            <!-- CURRENT YEAR TITLE -->
+            <header id="festival-title">
+                <h1 class="display-2 lh-1">Artwife {{edition.year }}: {{ data.edition.name }}</h1>
+            </header>
+
+            <!-- CURRENT YEAR BODY -->
+            <div id="festival-body" class="fs-3 lh-sm">
+                <div v-html="data.edition.body"></div>
+            </div>
+
+            <br>
 
             <!-- FESTIVAL TITLE -->
             <header id="festival-title">
-                <h1 class="display-2 lh-1">{{ data.name }}</h1>
+                <h1 class="display-2 lh-1">{{ data.page.name }}</h1>
             </header>
 
             <!-- FESTIVAL BODY -->
             <div id="festival-body" class="fs-3 lh-sm">
-                <div v-html="data.body"></div>
+                <div v-html="data.page.body"></div>
             </div>
         </div>
 

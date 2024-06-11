@@ -9,14 +9,14 @@ use App\Models\Page;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class FestivalController extends Controller
+class ArchiveController extends Controller
 {
-    public function festival()
+    public function archive()
     {
         $editions = Edition::all()->sortByDesc('year');
-        $page = Page::where('page_key', 'festival')->firstOrFail();
+        $page = Page::where('page_key', 'artwife')->firstOrFail();
 
-        return Inertia::render('Festival', [
+        return Inertia::render('Archive', [
             'editions' => EditionResource::collection($editions),
             'page' => PageResource::make($page),
         ]);

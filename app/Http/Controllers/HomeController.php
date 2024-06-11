@@ -15,7 +15,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $page = Page::where('page_key', 'festival')->firstOrFail();
+        $page = Page::where('page_key', 'artwife')->firstOrFail();
         $edition = Edition::where('status_id', 2)->orderBy('year', 'desc')->firstOrFail();
         $events = $edition->events()->get()->sortBy('date_start');
 

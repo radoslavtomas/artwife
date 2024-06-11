@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\FestivalController;
+use App\Http\Controllers\ArchiveController;
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProgramController;
@@ -23,7 +24,8 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/program/{year?}/{slug?}', [ProgramController::class, 'program'])->name('program');
-Route::get('/festival', [FestivalController::class, 'festival'])->name('festival');
+Route::get('/archive', [ArchiveController::class, 'archive'])->name('archive');
+Route::get('/info', [InfoController::class, 'info'])->name('info');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
 
