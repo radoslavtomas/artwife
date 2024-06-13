@@ -12,7 +12,7 @@ const name = getLocaleVersion(page.name, locale).name
 const body = getLocaleVersion(page.body, locale).body
 
 onMounted(() => {
-    console.log(page)
+    // console.log(page)
 })
 
 </script>

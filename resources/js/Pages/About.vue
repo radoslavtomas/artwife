@@ -8,6 +8,7 @@ import TeamList from '@/Components/TeamList.vue'
 import Bookshop from '@/Components/Bookshop.vue'
 import DieraSpace from '@/Components/DieraSpace.vue'
 import Dedication from '@/Components/Dedication.vue'
+import PhotoCard from '@/Components/PhotoCard.vue'
 
 const locale = computed(() => usePage().props.locale)
 const pages = computed(() => usePage().props.pages).value.data
@@ -31,7 +32,7 @@ data.name = getLocaleVersion(aboutPage.name, locale.value).name
 data.body = getLocaleVersion(aboutPage.body, locale.value).body
 
 onMounted(() => {
-    console.log(people)
+    // console.log(people)
 })
 
 </script>
@@ -53,28 +54,22 @@ onMounted(() => {
 
                 <div id="about-photos">
                     <div class="container">
-                        <div class="row">
 
-                            <div class="photo-card col" v-for="(person, index) in people" :key="index">
-                                <!-- Item 2 -->
-                                <header>
-                                    <div class="fa" style="background-position: center;background-size: cover;"
-                                         :style="{ backgroundImage: 'url(' + `/storage/${person.avatar}` + ')' }">
-                                    </div>
-                                </header>
-                                <main>
-                                    <h5 class="m-0">{{ person.full_name}}</h5>
-                                    <p class="m-0 font-weigth500">
-                                        Riaditeľka festivalu						</p>
-                                    <p>
-                                        <a href="mailto:ivana@festanca.sk">ivana@festanca.sk</a>
-                                    </p>
-                                </main>
+                        <div class="photo-gallery">
+                            <div class="photo-card" v-for="(person, index) in people" :key="index">
 
+                                <div class="photo-card-header" style="background-position: center;background-size: cover;"
+                                     :style="{ backgroundImage: 'url(' + `/storage/${person.avatar}` + ')' }">
+                                </div>
+
+                                <div class="photo-card-body">
+                                    <p class="m-0">{{ person.full_name}}</p>
+                                    <p class="m-0">{{ getLocaleVersion(person.title, locale).title }}</p>
+                                </div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
 
                 <div id="about-sections" class="row">
@@ -98,25 +93,41 @@ onMounted(() => {
     </MainLayout>
 </template>
 
-<style scoped>
-.fa {
-    width: 100px;
-    height: 100px;
-    border: 4px solid;
-    margin: 25px 35px 50px 0;
+<style>
+.photo-gallery {
     display: flex;
-    border-radius: 100px;
+    flex-wrap: wrap;
 }
 
 .photo-card {
-    box-sizing: border-box;
-    color: rgb(119, 119, 119);
     display: flex;
     align-items: center;
     font-weight: 400;
     position: relative;
     text-align: left;
-    width: 624px;
+    margin: 0 15px;
+    width: 45%;
 }
 
+.photo-card-header {
+    width: 100px;
+    height: 100px;
+    border: 4px solid rgb(45, 79, 143);
+    margin: 25px 25px 25px 0;
+    border-radius: 100px;
+}
+
+.photo-card-body {
+    width: calc(100% - 125px);
+}
+
+.photo-card-body p {
+    font-size: 20px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .photo-card {
+        width: 100%;
+    }
+}
 </style>
