@@ -1,6 +1,7 @@
 /* RULES COMMON TO ALL PAGES */
 
 body {
+    background-color: #9a9a9a !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
