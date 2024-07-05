@@ -102,16 +102,23 @@ class EventResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('edition.year'),
-                Tables\Columns\TextColumn::make('title.0.title')->label('Title'),
-                Tables\Columns\TextColumn::make('date_start')->date('d.m.Y'),
+                Tables\Columns\TextColumn::make('edition.year')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('title.0.title')->label('Title')
+                ->sortable()
+                ->searchable(),
+                Tables\Columns\TextColumn::make('date_start')->date('d.m.Y')
+                ->sortable()
+                ->searchable(),
                 Tables\Columns\TextColumn::make('time_start')->date('H:i'),
                 Tables\Columns\SelectColumn::make('status_id')
                     ->label('Status')
                     ->options(Status::all()->pluck('name', 'id')),
-            ])
+            ])->defaultSort('date_start', 'desc')
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('year')
+                    ->relationship('edition', 'year')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
