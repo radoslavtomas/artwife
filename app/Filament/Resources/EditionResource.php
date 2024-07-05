@@ -47,11 +47,12 @@ class EditionResource extends Resource
                 Forms\Components\Fieldset::make('Main')->schema([
                     Forms\Components\FileUpload::make('image')
                         ->image()
-                        ->getUploadedFileNameForStorageUsing(
-                            function (TemporaryUploadedFile $file): string {
-                                $filename = explode('.', $file->getClientOriginalName())[0];
-                                return Str::slug($filename).'.'.$file->getClientOriginalExtension();
-                        })
+                        ->preserveFilenames()
+//                        ->getUploadedFileNameForStorageUsing(
+//                            function (TemporaryUploadedFile $file): string {
+//                                $filename = explode('.', $file->getClientOriginalName())[0];
+//                                return Str::slug($filename).'.'.$file->getClientOriginalExtension();
+//                        })
                         ->directory('editions'),
                     Forms\Components\Repeater::make('title')->schema([
                         Forms\Components\Select::make('language')
