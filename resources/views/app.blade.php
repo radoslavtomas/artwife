@@ -8,12 +8,12 @@
 
         <link rel="icon" type="image/x-icon" href="/img/DIERA_ELIPSA.svg">
 
-{{--        <!-- LOAD ELASTIC FONT -->--}}
-{{--        <style>--}}
-{{--            body {--}}
-{{--                background-image: url('/img/2024_marec_web_bckgrnd.png');--}}
-{{--            }--}}
-{{--        </style>--}}
+        <!-- LOAD ELASTIC FONT -->
+        <style>
+            body {
+                background-image: url('/img/cover_2024_op.jpg');
+            }
+        </style>
 
         <!-- Alpine Plugins -->
         <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
