@@ -47,7 +47,10 @@ class PeopleResource extends Resource
                             function (TemporaryUploadedFile $file): string {
                                 $filename = explode('.', $file->getClientOriginalName())[0];
                                 return Str::slug($filename).'.'.$file->getClientOriginalExtension();
-                            }),
+                            })
+                        ->imageResizeMode('contain')
+                        ->imageResizeTargetWidth('1200')
+                        ->imageResizeUpscale(false),
                     Forms\Components\TextInput::make('first_name')
                         ->required(),
                     Forms\Components\TextInput::make('last_name')

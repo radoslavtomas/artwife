@@ -52,7 +52,10 @@ class EditionResource extends Resource
                             function (TemporaryUploadedFile $file): string {
                                 $filename = explode('.', $file->getClientOriginalName())[0];
                                 return Str::slug($filename).'.'.$file->getClientOriginalExtension();
-                        }),
+                        })
+                        ->imageResizeMode('contain')
+                        ->imageResizeTargetWidth('1200')
+                        ->imageResizeUpscale(false),
                     Forms\Components\Repeater::make('title')->schema([
                         Forms\Components\Select::make('language')
                             ->options(Language::all()->pluck('name', 'name'))
