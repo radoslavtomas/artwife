@@ -6,7 +6,7 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 // import TeamCarousel from '@/Components/TeamCarousel.vue'
 // import TeamList from '@/Components/TeamList.vue'
 // import Bookshop from '@/Components/Bookshop.vue'
-import DieraSpace from '@/Components/DieraSpace.vue'
+// import DieraSpace from '@/Components/DieraSpace.vue'
 import Dedication from '@/Components/Dedication.vue'
 // import PhotoCard from '@/Components/PhotoCard.vue'
 

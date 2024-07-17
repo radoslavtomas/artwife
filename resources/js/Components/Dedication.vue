@@ -13,9 +13,9 @@ const body = getLocaleVersion(props.page.body, locale).body
 </script>
 
 <template>
-    <div id="dedication">
-        <div v-html="body"></div>
-    </div>
+<!--    <div id="dedication">-->
+<!--        <div v-html="body"></div>-->
+<!--    </div>-->
 
     <!-- LOGOS -->
     <div id="logos" class="row mt-4 pt-4" style="">
