@@ -18,7 +18,7 @@ const body = getLocaleVersion(props.page.body, locale).body
     </div>
 
     <!-- LOGOS -->
-    <div id="logos" class="row" style="">
+    <div id="logos" class="row mt-4 pt-4" style="">
         <div class="logo col-md-4 col-12" style="">
             <img class="" style="width:90%" src="/img/elipsa_logo_napis.svg" />
         </div>

@@ -3,12 +3,12 @@ import { Head, usePage } from '@inertiajs/vue3'
 import { computed, onMounted } from 'vue'
 import { getLocaleVersion } from '@/helpers/index.js'
 import MainLayout from '@/Layouts/MainLayout.vue'
-import TeamCarousel from '@/Components/TeamCarousel.vue'
-import TeamList from '@/Components/TeamList.vue'
-import Bookshop from '@/Components/Bookshop.vue'
+// import TeamCarousel from '@/Components/TeamCarousel.vue'
+// import TeamList from '@/Components/TeamList.vue'
+// import Bookshop from '@/Components/Bookshop.vue'
 import DieraSpace from '@/Components/DieraSpace.vue'
 import Dedication from '@/Components/Dedication.vue'
-import PhotoCard from '@/Components/PhotoCard.vue'
+// import PhotoCard from '@/Components/PhotoCard.vue'
 
 const locale = computed(() => usePage().props.locale)
 const pages = computed(() => usePage().props.pages).value.data
@@ -25,7 +25,7 @@ let data = {
 
 const aboutPage = pages.filter((page) => page.page_key === 'about')[0];
 // const openingHoursPage = pages.filter((page) => page.page_key === 'openingHours')[0];
-const spacePage = pages.filter((page) => page.page_key === 'space')[0];
+// const spacePage = pages.filter((page) => page.page_key === 'space')[0];
 const supportPage = pages.filter((page) => page.page_key === 'support')[0];
 
 data.name = getLocaleVersion(aboutPage.name, locale.value).name
@@ -72,7 +72,7 @@ onMounted(() => {
 
                 </div>
 
-                <div id="about-sections" class="row">
+<!--                <div id="about-sections" class="row">-->
 <!--                    <div class="col col-sm-11 col-md-11 col-lg-4">-->
 <!--                        <Bookshop :page="bookstorePage" />-->
 <!--                    </div>-->
@@ -81,12 +81,13 @@ onMounted(() => {
 <!--                        <TeamList :people="people" />-->
 <!--                    </div>-->
 
-                    <div class="col-11">
-                        <DieraSpace :page="spacePage"/>
-                    </div>
-                </div>
+<!--                    <div class="col-11">-->
+<!--                        <DieraSpace :page="spacePage"/>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
 
+            <br>
             <Dedication :page="supportPage"/>
             <br>
         </div>
