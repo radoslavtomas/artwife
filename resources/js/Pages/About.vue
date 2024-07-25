@@ -48,7 +48,7 @@ onMounted(() => {
             <h1>{{ data.name }}</h1>
 
             <div id="about-content">
-                <div v-html="data.body" />
+                <div class="wysiwyg" v-html="data.body" />
 
                 <br>
 

@@ -51,7 +51,7 @@ onMounted(() => {
             </header>
 
             <!-- FESTIVAL YEAR BODY -->
-            <div id="festival-body" class="fs-3 lh-sm" v-html="data.body">
+            <div id="festival-body" class="fs-3 lh-sm wysiwyg" v-html="data.body">
             </div>
         </div>
 

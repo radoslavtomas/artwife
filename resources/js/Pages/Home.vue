@@ -83,7 +83,7 @@ onMounted(() => {
 
             <!-- FESTIVAL BODY -->
             <div id="festival-body" class="fs-3 lh-sm">
-                <div v-html="data.page.body"></div>
+                <div class="wysiwyg" v-html="data.page.body"></div>
             </div>
         </div>
 

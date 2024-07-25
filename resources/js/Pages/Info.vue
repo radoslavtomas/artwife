@@ -29,7 +29,7 @@ onMounted(() => {
 
             <!-- FESTIVAL BODY -->
             <div id="festival-body" class="fs-3 lh-sm">
-                <div v-html="body"></div>
+                <div class="wysiwyg" v-html="body"></div>
             </div>
         </div>
     </MainLayout>
