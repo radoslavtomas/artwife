@@ -30,7 +30,7 @@ import CookieConsent from '@/Components/CookieConsent.vue'
 @import "../../css/utilities.css";
 
 #festival {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 </style>

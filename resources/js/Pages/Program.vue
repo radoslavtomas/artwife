@@ -4,10 +4,12 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 import { computed, onMounted } from 'vue'
 import { getLocaleVersion } from '@/helpers/index.js'
 import EventCard from '@/Components/EventCard.vue'
+import ReviewCard from '@/Components/ReviewCard.vue'
 
 const locale = computed(() => usePage().props.locale).value
 const edition = computed(() => usePage().props.edition).value.data
 const events = computed(() => usePage().props.events).value.data
+const reviews = computed(() => usePage().props.reviews).value.data
 
 
 let data = {
@@ -16,7 +18,8 @@ let data = {
     body: null,
     year: null,
     hero_img: null,
-    no_events: locale === 'sk' ? 'Zatiaľ žiadne eventy, program len pripravujeme...' : 'No events yet, we are working on it...'
+    no_events: locale === 'sk' ? 'Zatiaľ žiadne eventy, program len pripravujeme...' : 'No events yet, we are working on it...',
+    reviews_title: locale === 'sk' ? 'Recenzie' : 'Reviews'
 }
 
 
@@ -27,8 +30,8 @@ data.year = edition.year
 data.hero_img = edition.image
 
 onMounted(() => {
-    // console.log(edition)
-    // console.log(events)
+    console.log(reviews)
+    console.log(reviews.length)
 })
 
 </script>
@@ -46,7 +49,7 @@ onMounted(() => {
             ></div>
 
             <!-- FESTIVAL YEAR TITLE -->
-            <header id="festival-title" class="display-2 lh-1 mb-1">
+            <header id="festival-title" class="display-2 mb-1">
                 <Link href="/festival">ArtWife</Link> / <span class="uppercase">ARTWIFE {{ data.year }}: {{ data.title }}</span>
             </header>
 
@@ -55,8 +58,34 @@ onMounted(() => {
             </div>
         </div>
 
+        <div id="reviews-title" v-if="reviews.length" class="app-panel">
+            <!-- REVIEWS TITLE -->
+            <div class="app-title display-2">
+                <span class="uppercase">{{ data.reviews_title }}</span>
+            </div>
+        </div>
+
+        <div v-if="reviews.length" class="card-container">
+
+            <div class="row g-2">
+                <ReviewCard
+                    v-for="review in reviews"
+                    :review="review"
+                    :key="review.id"
+                />
+            </div>
+        </div>
+
+        <div id="program-title" class="app-panel">
+            <!-- REVIEWS TITLE -->
+            <header class="app-title display-2 lh-1">
+                <span class="uppercase">Program</span>
+            </header>
+        </div>
+
+
         <!-- FESTIVAL YEAR PROGRAMMING -->
-        <div id="year-programming" class="mt-2">
+        <div class="card-container mt-2">
 
             <div v-if="events.length === 0" class="col-12">
                 <div class="card p-2">

@@ -9,7 +9,7 @@
     min-width: 1000px;
 }
 
-#year-programming {
+#year-programming, .card-container {
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -56,22 +56,26 @@
     background-color: black;
 }
 
-#year-programming .card {
+#year-programming .card,
+.card-container .card {
     border: 2px solid black;
     border-radius: 0px;
 }
 
-#year-programming a {
+#year-programming a,
+.card-container a {
     text-decoration: none;
     color: black;
 }
 
-#year-programming img {
+#year-programming img,
+.card-container img {
     border-radius: 0px;
     border: 2px solid white;
 }
 
-#year-programming header {
+#year-programming header,
+.card-container header {
     color: white;
     text-shadow: -1.3px 1.3px 0 #000, 1.3px 1.3px 0 #000, 1.3px -1.3px 0 #000, -1.3px -1.3px 0 #000;
 }
@@ -80,34 +84,40 @@
     border-top: 2px solid black;
 }
 
-#year-programming a:hover .card {
+#year-programming a:hover .card,
+.card-container a:hover .card {
     background-color: black;
     color: white;
     border: 2px solid white;
 }
 
-#year-programming a:hover img {
+#year-programming a:hover img,
+.card-container a:hover img {
     border: 2px solid white;
 }
 
-#year-programming a:hover .teaser-footer {
+#year-programming a:hover .teaser-footer,
+.card-container a:hover .teaser-footer {
     background-color: black;
     border-top: 2px solid white;
 }
 
-#year-programming a:hover header {
+#year-programming a:hover header,
+.card-container a:hover header {
     color: black;
     text-shadow: -1.3px 1.3px 0 white, 1.3px 1.3px 0 white, 1.3px -1.3px 0 white, -1.3px -1.3px 0 white;
 }
 
 @media screen and (max-width: 1199px) {
-    #year-programming {
-        min-width: 800px !important;
+    #year-programming,
+    .card-container
+    {
+        min-width: 1000px !important;
     }
 }
 
 @media screen and (max-width: 990px) {
-    #festival, #year-programming {
+    #festival, #year-programming, .card-container {
         min-width: 0px !important;
         width: 95%;
     }
@@ -125,12 +135,14 @@
         text-decoration-thickness: 3px;
     }
 
-    #year-programming header {
+    #year-programming header,
+    .card-container header {
         color: black;
         text-shadow: none;
     }
 
-    #year-programming a:hover header {
+    #year-programming a:hover header,
+    .card-container a:hover header {
         color: white;
         text-shadow: none;
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\ReviewsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,6 +29,8 @@ Route::get('/archive', [ArchiveController::class, 'archive'])->name('archive');
 Route::get('/info', [InfoController::class, 'info'])->name('info');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
+
+Route::get('/reviews/{slug?}', [ReviewsController::class, 'show'])->name('reviews.show');
 
 Route::get('language/{language}', function ($language) {
     Session()->put('locale', $language);

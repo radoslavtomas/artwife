@@ -41,4 +41,9 @@ class Edition extends Model
     {
         return $this->hasMany(Event::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
