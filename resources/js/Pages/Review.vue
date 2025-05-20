@@ -1,7 +1,7 @@
 <script setup>
 import MainLayout from '@/Layouts/MainLayout.vue'
 import { Head, Link, usePage } from '@inertiajs/vue3'
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 
 const locale = computed(() => usePage().props.locale).value
 const review = computed(() => usePage().props.review).value.data
@@ -12,27 +12,25 @@ let data = {
     review_info: locale === 'sk' ? '(celá recenzia a viac)' : '(the whole review & more)'
 }
 
-onMounted(() => {
-    console.log(review)
-})
-
 </script>
 
 <template>
     <MainLayout>
         <Head :title="review.title" />
 
-        <div class="app-panel mb-4">
-            <!-- REVIEWS TITLE -->
-            <div class="app-title display-2 lh-1 mb-1">
-                <span class="uppercase">{{ data.reviews_title }}</span>
-            </div>
-        </div>
+<!--        <div class="app-panel mb-4">-->
+<!--            &lt;!&ndash; REVIEWS TITLE &ndash;&gt;-->
+<!--            <div class="app-title display-2 lh-1 mb-1">-->
+<!--                <span class="uppercase">{{ data.reviews_title }}</span>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <div id="event" class="card p-2">
             <div class="row">
                 <div class="col teaser-text-container">
                     <div class="card-body h-100 p-0 pt-3">
+                        <h1 class="display-2 lh-1 card-title mb-3 pb-2 border-bottom border-2 border-black">{{ data.reviews_title }}</h1>
+
                         <h1 class="display-2 lh-1 card-title mb-3">{{ review.title }}</h1>
 
                         <div
