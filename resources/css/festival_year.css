@@ -21,7 +21,7 @@
 }
 
 .card-container {
-    width: 98%;
+    width: 100%;
 }
 
 #hero-image {
@@ -123,7 +123,7 @@
 }
 
 @media screen and (max-width: 990px) {
-    #festival, #year-programming, .card-container {
+    #festival, #year-programming {
         min-width: 0px !important;
         width: 95%;
     }

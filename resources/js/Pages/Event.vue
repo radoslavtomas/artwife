@@ -1,7 +1,7 @@
 <script setup>
 import { Head, usePage } from '@inertiajs/vue3'
 import MainLayout from '@/Layouts/MainLayout.vue'
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import { getLocaleVersion } from '@/helpers/index.js'
 
 const locale = computed(() => usePage().props.locale).value
@@ -27,9 +27,6 @@ data.body = getLocaleVersion(event.body, locale).body
 data.hero_img = event.image
 data.place = getLocaleVersion(event.place, locale).place
 
-onMounted(() => {
-    console.log(event)
-})
 </script>
 
 <template>

@@ -29,7 +29,7 @@ let data = {
             <div class="row">
                 <div class="col teaser-text-container">
                     <div class="card-body h-100 p-0 pt-3">
-                        <h1 class="display-2 lh-1 card-title mb-3 pb-2 border-bottom border-2 border-black">{{ data.reviews_title }}</h1>
+                        <h1 class="display-2 card-title pl-2 pt-2 pb-1 mb-3 border-bottom border-2 border-black">{{ data.reviews_title }}</h1>
 
                         <h1 class="display-2 lh-1 card-title mb-3">{{ review.title }}</h1>
 
