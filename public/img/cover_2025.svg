@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3637.47 2046.08">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath-21);
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath-6);
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-7);
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-17);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-15);
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath-18);
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath-22);
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath-23);
+      }
+
+      .cls-10 {
+        clip-path: url(#clippath-9);
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath-10);
+      }
+
+      .cls-12 {
+        clip-path: url(#clippath-25);
+      }
+
+      .cls-13 {
+        clip-path: url(#clippath-11);
+      }
+
+      .cls-14 {
+        fill: none;
+      }
+
+      .cls-15 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-16 {
+        clip-path: url(#clippath-5);
+      }
+
+      .cls-17 {
+        clip-path: url(#clippath-20);
+      }
+
+      .cls-18 {
+        clip-path: url(#clippath-8);
+      }
+
+      .cls-19 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-20 {
+        clip-path: url(#clippath-26);
+      }
+
+      .cls-21 {
+        clip-path: url(#clippath-12);
+      }
+
+      .cls-22 {
+        clip-path: url(#clippath-14);
+      }
+
+      .cls-23 {
+        clip-path: url(#clippath-19);
+      }
+
+      .cls-24 {
+        fill: #5dff83;
+      }
+
+      .cls-25 {
+        clip-path: url(#clippath-16);
+      }
+
+      .cls-26 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-27 {
+        clip-path: url(#clippath-13);
+      }
+
+      .cls-28 {
+        clip-path: url(#clippath-24);
+      }
+
+      .cls-29 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-14" x="2191.39" y="832.04" width="1149.37" height="1194.08" transform="translate(-253.49 2187.79) rotate(-41.43)"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-14" x="312.43" y="87.23" width="1149.37" height="1194.08" transform="translate(-230.8 758.18) rotate(-41.43)"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-14" x="1978.68" y="817.69" width="392.07" height="233.43" transform="translate(4531.75 717.87) rotate(151.5)"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <rect class="cls-14" x="3262.14" y="1781.75" width="392.07" height="233.43" transform="translate(1830.9 5492.23) rotate(-94.4)"/>
+    </clipPath>
+    <clipPath id="clippath-4">
+      <polygon class="cls-14" points="597.64 1136.35 425.98 736.36 191.72 840.26 363.37 1240.24 597.64 1136.35"/>
+    </clipPath>
+    <clipPath id="clippath-5">
+      <polygon class="cls-14" points="321.98 758.71 -103.6 701.59 -137.05 959.18 288.53 1016.3 321.98 758.71"/>
+    </clipPath>
+    <clipPath id="clippath-6">
+      <rect class="cls-14" x="1412.67" y="1679.04" width="600.76" height="600.76"/>
+    </clipPath>
+    <clipPath id="clippath-7">
+      <rect class="cls-14" x="288.31" y="-238.85" width="487.98" height="487.98"/>
+    </clipPath>
+    <clipPath id="clippath-8">
+      <rect class="cls-14" x="1525.22" y="1191" width="487.98" height="487.98"/>
+    </clipPath>
+    <clipPath id="clippath-9">
+      <rect class="cls-14" x="2524.39" y="319.52" width="487.98" height="487.98"/>
+    </clipPath>
+    <clipPath id="clippath-10">
+      <rect class="cls-14" x="116.44" y="1052.54" width="604.65" height="658.05"/>
+    </clipPath>
+    <clipPath id="clippath-11">
+      <rect class="cls-14" x="3028.37" y="1183.16" width="604.65" height="658.05" transform="translate(-254.88 788.4) rotate(-13.01)"/>
+    </clipPath>
+    <clipPath id="clippath-12">
+      <rect class="cls-14" x="623.54" y="1457.08" width="527.15" height="581.98"/>
+    </clipPath>
+    <clipPath id="clippath-13">
+      <rect class="cls-14" x="3303.71" y="529.48" width="667.51" height="667.51" transform="translate(200.67 -608.07) rotate(9.83)"/>
+    </clipPath>
+    <clipPath id="clippath-14">
+      <rect class="cls-14" x="1893.37" y="22.76" width="667.51" height="667.51" transform="translate(93.51 -374.83) rotate(9.83)"/>
+    </clipPath>
+    <clipPath id="clippath-15">
+      <rect class="cls-14" x="-188.7" y="71.95" width="562.33" height="662.18"/>
+    </clipPath>
+    <clipPath id="clippath-16">
+      <rect class="cls-14" x="2768.37" y="1714.99" width="562.33" height="662.18"/>
+    </clipPath>
+    <clipPath id="clippath-17">
+      <rect class="cls-14" x="1244.05" y="-184.23" width="562.33" height="662.18"/>
+    </clipPath>
+    <clipPath id="clippath-18">
+      <rect class="cls-14" x="1605.83" y="164.99" width="442.59" height="769.42"/>
+    </clipPath>
+    <clipPath id="clippath-19">
+      <rect class="cls-14" x="2547.08" y="-171.78" width="442.59" height="769.42"/>
+    </clipPath>
+    <clipPath id="clippath-20">
+      <rect class="cls-14" x="2013.19" y="1288.78" width="376.95" height="638.81"/>
+    </clipPath>
+    <clipPath id="clippath-21">
+      <rect class="cls-14" x="-8.5" y="1512.18" width="376.95" height="638.81"/>
+    </clipPath>
+    <clipPath id="clippath-22">
+      <rect class="cls-14" x="1114.18" y="884.28" width="392.07" height="233.43" transform="translate(412.8 2384.22) rotate(-94.4)"/>
+    </clipPath>
+    <clipPath id="clippath-23">
+      <rect class="cls-14" x="1151.1" y="1062.71" width="376.95" height="638.81"/>
+    </clipPath>
+    <clipPath id="clippath-24">
+      <rect class="cls-14" x="3225.96" y="15.8" width="440.24" height="262.11" transform="translate(1552.82 3030.01) rotate(-59.15)"/>
+    </clipPath>
+    <clipPath id="clippath-25">
+      <rect class="cls-14" x="3025.87" y="472.13" width="176.01" height="131.66" transform="translate(137.48 -523.49) rotate(9.83)"/>
+    </clipPath>
+    <clipPath id="clippath-26">
+      <rect class="cls-14" x="3018.36" y="236.11" width="404.47" height="240.82" transform="translate(6169.29 -986.82) rotate(149.19)"/>
+    </clipPath>
+    <image id="image" width="2268" height="4032" xlink:href="../elements/štyri_kruhy.png"/>
+    <image id="image-2" width="2268" height="4032" xlink:href="../elements/vlajka.png"/>
+    <image id="image-3" width="2268" height="4032" xlink:href="../elements/slnko.png"/>
+    <image id="image-4" width="2268" height="4032" xlink:href="../elements/clovek.png"/>
+    <image id="image-5" width="2268" height="4032" xlink:href="../elements/zrkadlo.png"/>
+    <image id="image-6" width="2268" height="4032" xlink:href="../elements/okno.png"/>
+    <image id="image-7" width="2268" height="4032" xlink:href="../elements/oko.png"/>
+    <image id="image-8" width="2268" height="4032" xlink:href="../elements/pismeno_I.png"/>
+  </defs>
+  <g id="background">
+    <rect class="cls-24" x="-8.5" y="-8.5" width="3654.47" height="2063.08"/>
+  </g>
+  <g id="elements">
+    <g class="cls-29">
+      <use transform="translate(1689.42 1077.57) rotate(-41.43) scale(.5)" xlink:href="#image-2"/>
+    </g>
+    <g class="cls-15">
+      <use transform="translate(-189.54 332.76) rotate(-41.43) scale(.5)" xlink:href="#image-2"/>
+    </g>
+    <g class="cls-26">
+      <use transform="translate(2770.07 1351.15) rotate(151.5) scale(.31)" xlink:href="#image"/>
+    </g>
+    <g class="cls-19">
+      <use transform="translate(2834.69 2271.8) rotate(-94.4) scale(.31)" xlink:href="#image"/>
+    </g>
+    <g>
+      <g class="cls-7">
+        <use transform="translate(-115.94 1608.63) rotate(-113.23) scale(.34) skewX(.68)" xlink:href="#image"/>
+      </g>
+      <g class="cls-16">
+        <use transform="translate(351.35 1623.8) rotate(-172.36) scale(.34) skewX(.25)" xlink:href="#image"/>
+      </g>
+    </g>
+    <g class="cls-2">
+      <image width="2268" height="4032" transform="translate(1306.34 1195.5) scale(.36)" xlink:href="../elements/stvorcek.png"/>
+    </g>
+    <g class="cls-3">
+      <use transform="translate(169.68 -669.73) scale(.3)" xlink:href="#image-7"/>
+    </g>
+    <g class="cls-18">
+      <use transform="translate(1406.59 760.12) scale(.3)" xlink:href="#image-7"/>
+    </g>
+    <g class="cls-10">
+      <use transform="translate(2405.76 -111.36) scale(.3)" xlink:href="#image-7"/>
+    </g>
+    <g class="cls-11">
+      <use transform="translate(116.44 780.01) scale(.28)" xlink:href="#image-5"/>
+    </g>
+    <g class="cls-13">
+      <use transform="translate(2900.74 994.1) rotate(-13.01) scale(.28)" xlink:href="#image-5"/>
+    </g>
+    <g class="cls-21">
+      <image width="2268" height="4032" transform="translate(544.11 1120.37) scale(.31)" xlink:href="../elements/medaila.png"/>
+    </g>
+    <g class="cls-27">
+      <use transform="translate(3352.44 126.51) rotate(9.83) scale(.33)" xlink:href="#image-3"/>
+    </g>
+    <g class="cls-22">
+      <use transform="translate(1942.09 -380.2) rotate(9.83) scale(.33)" xlink:href="#image-3"/>
+    </g>
+    <g class="cls-5">
+      <use transform="translate(-317.83 -318.21) scale(.34)" xlink:href="#image-6"/>
+    </g>
+    <g class="cls-25">
+      <use transform="translate(2639.24 1324.83) scale(.34)" xlink:href="#image-6"/>
+    </g>
+    <g class="cls-4">
+      <use transform="translate(1114.92 -574.39) scale(.34)" xlink:href="#image-6"/>
+    </g>
+    <g class="cls-6">
+      <use transform="translate(1285.06 -229.37) scale(.43)" xlink:href="#image-8"/>
+    </g>
+    <g class="cls-23">
+      <use transform="translate(2226.32 -566.13) scale(.43)" xlink:href="#image-8"/>
+    </g>
+    <g class="cls-17">
+      <use transform="translate(1890.7 1073.61) scale(.27)" xlink:href="#image-4"/>
+    </g>
+    <g class="cls-1">
+      <use transform="translate(-131 1297.01) scale(.27)" xlink:href="#image-4"/>
+    </g>
+    <g>
+      <g class="cls-8">
+        <use transform="translate(686.73 1374.33) rotate(-94.4) scale(.31)" xlink:href="#image"/>
+      </g>
+      <g class="cls-9">
+        <use transform="translate(1028.6 847.54) scale(.27)" xlink:href="#image-4"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-28">
+        <use transform="translate(2632.43 85.06) rotate(-59.15) scale(.35)" xlink:href="#image"/>
+      </g>
+      <g class="cls-12">
+        <image width="2268" height="4032" transform="translate(2906.56 -35.79) rotate(9.83) scale(.26)" xlink:href="../elements/kruh_4.png"/>
+      </g>
+      <g class="cls-20">
+        <use transform="translate(3851.6 761.34) rotate(149.19) scale(.32)" xlink:href="#image"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -11,7 +11,8 @@
         <!-- LOAD ELASTIC FONT -->
         <style>
             body {
-                background-image: url('/img/cover_2024_op.jpg');
+                background-image: url('/img/cover_2025.svg');
+                background-size: contain;
             }
         </style>
 
